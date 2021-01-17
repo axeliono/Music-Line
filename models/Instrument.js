@@ -26,7 +26,7 @@ Instrument.init(
         // instrument's classification
         ////// add foreign key stuff
         classification_id: {
-            type: DataTypes.integer,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'classification',
