@@ -4,6 +4,7 @@ const Instrument = require("./Instrument");
 const User = require("./User");
 const Sale = require("./Sale");
 const Shopping_Cart_Selection = require("./Shopping_Cart_Selection");
+const Classification = require("./Classification");
 
 // add association logic here:
 
@@ -43,10 +44,20 @@ Sale.hasMany(Shopping_Cart_Selection, {
 });
 
 
+// Instrument to Classification Association (one to many)
+// Each shopping cart item is partr of only 1 sale
+// Each sale can have multiple shopping cart items
+Instrument.belongsTo(Classification, {
+    foreignKey: 'classification_id'
+});
+
+Classification.hasMany(Instrument, {
+    foreignKey: 'classification_id'
+});
 
 
 
 
 
 
-module.exports = { Instrument, User, Sale, Shopping_Cart_Selection };
+module.exports = { Instrument, User, Sale, Shopping_Cart_Selection, Classification };

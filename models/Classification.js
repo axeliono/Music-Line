@@ -4,9 +4,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User model, which extends Sequelize's Model class in order to inherit all its methods
-class Instrument extends Model {}
+class Classification extends Model {}
 
-Instrument.init(
+Classification.init(
     {
         id: {
             // use the special Sequelize DataTypes object provide what type of data it is
@@ -18,44 +18,19 @@ Instrument.init(
             // turn on auto increment
             autoIncrement: true
         },
-        // instrument's name
+        // user making the purchase
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        // instrument's classification
-        ////// add foreign key stuff
-        classification_id: {
-            type: DataTypes.integer,
-            allowNull: false,
-            references: {
-                model: 'classification',
-                key: 'id'
-            }
-        },
-        // instrument's origin
-        origin: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        // instrument's manufacturer
-        manufacturer: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        // instrument's price
-        price: {
-            type: DataTypes.DECIMAL,
-            allowNull: false
-        },
+        }
     },
     {
       sequelize,
-      timestamps: false,
+      timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: 'instrument'
+      modelName: 'classification'
     }
 );
 
-module.exports = Instrument;
+module.exports = Classification;
