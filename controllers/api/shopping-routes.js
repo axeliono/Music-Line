@@ -1,13 +1,14 @@
-const router = require("express").Router();
-const Classification = require("../../models/Classification");
+const { Shopping_Cart_Selection } = require("../../models");
 
-//GET all classifications
+const router = require("express").Router();
+
+//GET all Shopping_Cart_Selections
 router.get("/", (req, res) => {
-  Classification.findAll({
+  Shopping_Cart_Selection.findAll({
     //input attributes later if needed
   })
-    .then((dbClassData) => {
-      res.json(dbClassData);
+    .then((dbShopData) => {
+      res.json(dbShopData);
     })
     .catch((err) => {
       console.log(err);
@@ -16,17 +17,17 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Classification.findOne({
+  Shopping_Cart_Selection.findOne({
     //input attributes later if needed
     where: {
       id: req.params.id,
     },
   })
-    .then((dbClassData) => {
-      if (!dbClassData) {
+    .then((dbShopData) => {
+      if (!dbShopData) {
         res
           .status(404)
-          .json({ message: "no Classification found with this id" });
+          .json({ message: "no shopping cart found with this id" });
         return;
       }
     })
@@ -36,13 +37,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//Create new classification
+//Create new Shopping_Cart_Selection
 router.post("/", (req, res) => {
-  Classification.create({
-    name: req.body.name,
+  Shopping_Cart_Selection.create({
+    sale_id: req.body.sale_id,
+    instrument_id: req.body.instrument_id,
   })
-    .then((dbClassData) => {
-      res.json(dbClassData);
+    .then((dbShopData) => {
+      res.json(dbShopData);
     })
     .catch((err) => {
       console.log(err);
@@ -50,22 +52,22 @@ router.post("/", (req, res) => {
     });
 });
 
-//Delete classification
+//Delete Shopping_Cart_Selection
 router.delete("/:id", (req, res) => {
-  Classification.destroy({
+  Shopping_Cart_Selection.destroy({
     where: {
       id: req.params.id,
     },
   })
-    .then((dbClassData) => {
-      if (!dbClassData) {
+    .then((dbShopData) => {
+      if (!dbShopData) {
         res
           .status(404)
-          .json({ message: "No classification found with this id" });
+          .json({ message: "No Shopping_Cart_Selection found with this id" });
         return;
       }
 
-      res.json(dbClassData);
+      res.json(dbShopData);
     })
     .catch((err) => {
       console.log(err);
