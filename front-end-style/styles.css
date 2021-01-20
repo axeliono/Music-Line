@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* top navigation section
+--Inclde: search-bar with the button
+--Include: cart dropdown-menu */
+.top-nav{
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    padding: 0 10%;
+    display: flex;
+    background-color: pink;
+}
+/* logo */
+.logo{
+    width: 10%;
+    background-color: red; /* To display boundaries */
+}
+
+/* search bar and button styling */
+.search-bar{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(151, 54, 54); /* To display boundaries */
+}
+
+.search-bar input{
+    width: 80%;
+    padding: 5px;
+    height: 90%;
+    border: none;
+}
+
+.search-btn{
+    width: 5%;
+    height: 90%;
+    border: none;
+}
+
+.search-btn i{
+    font-size: 25px;
+}
+
+/* sign-up and cart drop down menu */
+.account-cart{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(24, 102, 0); /* To display boundaries */
+}
+
+.account {
+    margin: auto 10px;
+}
+
+.cart {
+    margin: auto 10px;
+}
+
+.account a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(204, 204, 204);
+}
+
+.account i{
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+.cart a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(204, 204, 204);
+}
+
+.cart i{
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+
+.bot-nav{
+    width: 100%;
+    height: 30%;
+    margin: 0 auto;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+}
+
+/* nav-menu */
+.menu-list{
+    width: 50%;
+    display: flex;
+}
+
+.menu-list ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: auto 10px;
+}
+
+.menu-list ul li {
+    margin: auto 20px;
+}
+
+/* login-signup */
+.login-signup{
+    width: 30%;
+    height: 100%;
+    margin: 10px auto;
+    display: flex;
+
+}
+
+.sign-up{
+    width: 40%;
+    height: 100%;
+}
+
+.login{
+    width: 60%;
+    height: 100%;
+}
