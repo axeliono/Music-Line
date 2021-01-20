@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color:  rgb(241, 241, 241);
 }
 
 .nav-bar {
@@ -24,12 +25,26 @@ body {
     margin: 0 auto;
     padding: 0 10%;
     display: flex;
-    background-color: pink;
+    background-color: rgb(219, 219, 219);
 }
 /* logo */
 .logo{
     width: 10%;
-    background-color: red; /* To display boundaries */
+    background-color:  rgb(219, 219, 219); /* To display boundaries */
+}
+
+.logo a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo a h1{
+    color: rgb(163, 0, 0);
+    font-size: 32px;
 }
 
 /* search bar and button styling */
@@ -39,7 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: rgb(151, 54, 54); /* To display boundaries */
+    background-color:  rgb(219, 219, 219); /* To display boundaries */
 }
 
 .search-bar input{
@@ -67,7 +82,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: rgb(24, 102, 0); /* To display boundaries */
+    background-color:  rgb(219, 219, 219);; /* To display boundaries */
 }
 
 .account {
@@ -83,7 +98,7 @@ body {
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    color: rgb(204, 204, 204);
+    color: rgb(122, 122, 122);
 }
 
 .account i{
@@ -96,7 +111,7 @@ body {
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    color: rgb(204, 204, 204);
+    color:  rgb(122, 122, 122);
 }
 
 .cart i{
@@ -114,7 +129,7 @@ note: About and contact menu will have its own page */
     padding: 0 10%;
     display: flex;
     justify-content: space-around;
-    background-color: yellow;
+    background-color:  rgb(196, 196, 196);
 }
 .bot-nav ul{
     width: 60%;
@@ -125,4 +140,104 @@ note: About and contact menu will have its own page */
 
 .bot-nav li{
     margin: auto 50px;
+}
+
+/* header img slider */
+.hero {
+    width: 80%;
+    margin: 0 auto;
+}
+.img-slider{
+    overflow: hidden;
+}
+
+.img-slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 30s slider infinite;
+}
+
+.img-slider figure img{
+    width: 20%;
+    float: left;
+    height: 55vh;
+}
+
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+
+}
+
+
+
+
+
+/* footer */
+footer{
+    width: 100%;
+    margin-top: 20px;
+    background-color:  rgb(75, 75, 75);
+}
+
+.contribution {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+
+}
+
+.contribution ul {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contribution ul h2{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contribution ul li {
+    list-style: none;
+    width: 20%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contribution ul li a{
+    text-decoration: none;
+    text-align: center;
+    margin: 5px;
+    color: rgb(233, 233, 233);
+
 }
