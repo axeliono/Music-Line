@@ -1,20 +1,6 @@
-const { Shopping_Cart_Selection } = require("../../models");
-
+const { Shopping_Cart_Selection, Sale, Instrument, User, Classification } = require("../../models");
+const withAuth = require('../../utils/auth');
 const router = require("express").Router();
-
-//GET all Shopping_Cart_Selections
-router.get("/", (req, res) => {
-  Shopping_Cart_Selection.findAll({
-    //input attributes later if needed
-  })
-    .then((dbShopData) => {
-      res.json(dbShopData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
 
 router.get("/:id", (req, res) => {
   Shopping_Cart_Selection.findOne({
@@ -22,6 +8,28 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    include: {
+      model: Shopping_Cart_Selection,
+      attributes: ['id'],
+      include: [
+          {
+              model: Sale,
+              attributes: ['sum_price']                
+          },
+          {
+              model: Instrument,
+              attributes: ['name', 'origin', 'manufacturer', 'price'],
+              include: {
+                  model: Classification,
+                  attributes: ['name']
+              }
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
+      ]
+    }
   })
     .then((dbShopData) => {
       if (!dbShopData) {
