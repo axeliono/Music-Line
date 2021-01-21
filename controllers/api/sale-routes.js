@@ -1,11 +1,25 @@
-const { Sale } = require("../../models");
-
+const { Sale, Instrument, User } = require("../../models");
+const withAuth = require('../../utils/auth');
 const router = require("express").Router();
 
 //GET all Sales
 router.get("/", (req, res) => {
   Sale.findAll({
-    //input attributes later if needed
+    attributes: [
+      'id',
+      'sum_price',
+      'created_at'
+    ],
+    include: [
+      {
+      model: Instrument,
+      attributes: ['id', 'name', 'origin', 'manufacturer', 'price']
+      },
+      {
+      model: User,
+      attributes: ['username']
+      }
+    ]
   })
     .then((dbSaleData) => {
       res.json(dbSaleData);
@@ -22,6 +36,21 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    attributes: [
+      'id',
+      'sum_price',
+      'created_at'
+    ],
+    include: [
+      {
+      model: Instrument,
+      attributes: ['id', 'name', 'origin', 'manufacturer', 'price']
+      },
+      {
+      model: User,
+      attributes: ['username']
+      }
+    ]
   })
     .then((dbSaleData) => {
       if (!dbSaleData) {

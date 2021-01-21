@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Instrument,
-        attributes: ['id', 'name', 'classification_id', 'origin', 'manufacturer', 'price'],
+        attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
         include: {
             model: Classification,
             attributes: ['name']
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Shopping_Cart_Selection,
-        attributes: ['id', 'sale_id', 'instrument_id'],
+        attributes: ['id'],
         include: [
             {
                 model: Sale,
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
             },
             {
                 model: Instrument,
-                attributes: ['name', 'classification_id', 'origin', 'manufacturer', 'price'],
+                attributes: ['name', 'origin', 'manufacturer', 'price'],
                 include: {
                     model: Classification,
                     attributes: ['name']
