@@ -249,8 +249,9 @@ note: About and contact menu will have its own page */
 /* footer */
 footer{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 100px;
     background-color: rgb(196, 196, 196);
+    position: absolute;
 }
 
 .contribution {

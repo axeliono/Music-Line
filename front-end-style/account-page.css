@@ -1,0 +1,50 @@
+main{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.login-header {
+    width: 80%;
+    height: 40%;
+    margin: auto;
+    padding: 10px;
+    background-color:rgb(63, 63, 63);
+    color: #fff;
+}
+
+.login-section {
+    width: 80%;
+    height: 40%;
+    margin: auto;
+}
+
+.login-section fieldset{
+    padding: 50px 200px;
+}
+
+.login-section fieldset div{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-section label{
+    margin: 10px 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.login-section input{
+    height: 30px;
+    width: 350px;
+    padding: 2px 5px;
+}
+
+.sign-btn{
+    margin-top: 20px;
+    width: 350px;
+    height: 50px;
+    background-color:rgb(163, 0, 0);
+    border: none;
+    color: #fff;
+}

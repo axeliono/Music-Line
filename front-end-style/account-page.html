@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-page.css">
+    <link rel="stylesheet" href="account-page.css">
 </head>
 
 <body id="home">
@@ -47,27 +48,25 @@
             </ul>
         </div>
     </nav>
-    <!-- {{/each}} -->
 
-    <!-- {{#each}} -->
-    <header class="hero">
-        <div class="img-slider">
-            <figure>
-                <img src="header1.jpg">
-                <img src="header2.jpg">
-                <img src="header3.jpg">
-                <img src="header4.jpg">
-                <img src="header1.jpg">
-            </figure>
-        </div>
-    </header>
-    <!-- {{/each}} -->
+<!-- Account/Shopping-cart page starts -->
     <main>
-        <div class="main-header">
-            <h1>We have the best instruments, feel free to shop around!</h1>
+        <div class="login-header">
+            <h1>My Account</h1>
+        </div>
+        <div class="login-section">
+            <fieldset>
+                <div>
+                    <label for="email">Email Address (Required)</label>
+                    <input type="text" id="username" name="username">
+                    <label for="email">Password (Required)</label>
+                    <input type="password" id="password" name="password">
+                    <button class="sign-btn" id="signInBtn">Sign In</button>
+                </div>
+                
+            </fieldset>
         </div>
 
-       
     </main>
 
     <footer>
