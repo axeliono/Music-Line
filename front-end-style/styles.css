@@ -225,15 +225,32 @@ note: About and contact menu will have its own page */
 
 }
 
+  /* MAIN SECTION WHERE ALL INSTRUMENTS CAN BE FOUND */
+  main{
+      width: 80%;
+      margin: 40px auto;
+  }
+  
+  .main-header{
+      width: 100%;
+      height: 20%;
+  }
 
+  .main-header h1{
+    color:rgb(163, 0, 0);
+    text-align: center;
+}
 
+  .inst-select{
+      margin: 20px auto;
+  }
 
 
 /* footer */
 footer{
     width: 100%;
     margin-top: 20px;
-    background-color:  rgb(75, 75, 75);
+    background-color: rgb(196, 196, 196);
 }
 
 .contribution {
