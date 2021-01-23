@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-page.css">
-    <link rel="stylesheet" href="account-page.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 
 <body id="home">
@@ -49,25 +49,62 @@
         </div>
     </nav>
 
-<!-- Account/Shopping-cart page starts -->
-    <main>
-        <div class="login-header">
-            <h1>My Account</h1>
-        </div>
-        <div class="login-section">
-            <fieldset>
-                <div>
-                    <label for="email">Email Address (Required)</label>
-                    <input type="text" id="username" name="username">
-                    <label for="email">Password (Required)</label>
-                    <input type="password" id="password" name="password">
-                    <button class="sign-btn" id="signInBtn">Sign In</button>
-                </div>
-                
-            </fieldset>
+    <section>
+
+        <!-- proceed to checkout button -->
+        <div class="proceed">
+            <button type="submit" id="checkout-btn">
+                <h2>Proceed To Checkout</h2>
+                <i class="fas fa-arrow-circle-right"></i>
+            </button>
         </div>
 
-    </main>
+        <!-- carts -->
+        <fieldset>
+            <h3>Shopping Cart</h3>
+            <div class="col-topic">
+                <h4>Item</h4>
+                <h4>Price</h4>
+                <h4>Quantity</h4>
+                <h4>Total</h4>
+            </div>
+            <div class="item-detail" id="item-img">
+                <!-- item(s)
+                From here, html code will be deleted and it will be re-written from 
+                javascript-->
+                <div class="item-descript">
+                    <div class="item-img">
+                        <img src="../public/images/accordian.jpg" alt="">
+                    </div>
+                    <div class="item-txt" id="itemTxt">
+                        <div class="instrument-name" id="instName">
+                            <h2>Accordian</h2>
+                        </div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa illum id aliquid exercitationem in blanditiis quasi, aspernatur modi vel quidem numquam totam reprehenderit nobis placeat accusantium, obcaecati, veniam eaque?
+                    </div>
+                </div>
+
+                    <h4 class="price">$1000</h4>
+                    <h4 class="quantity">1</h4>
+                    <h4 class="total">$1000</h4>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="subtotal">
+            <h2>SubTotal</h2>
+            <h2>$1000</h2>
+        </div>
+
+        <!-- proceed to checkout button -->
+        <div class="proceed">
+            <button type="submit" id="checkout-btn">
+                <h2>Proceed To Checkout</h2>
+                <i class="fas fa-arrow-circle-right"></i>
+            </button>
+        </div>
+    </section>
 
     <footer>
         <div class="contribution">
