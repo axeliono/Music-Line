@@ -2,9 +2,9 @@ async function newInstrumentSale(event) {
   event.preventDefault();
 
   const instrument_id;
-  const sale_id;
-  //first create sale that will
-  const response = await fetch("/api/sale", {
+  //pull sale id from session
+  const sale_id = req.session.sale_id;
+  const response = await fetch("/api/shopping/", {
     method: "post",
     body: JSON.stringify({
       instrument_id,
@@ -16,7 +16,8 @@ async function newInstrumentSale(event) {
   });
 
   if (response.ok) {
-    //move to adding instrue
+    //create alert if they want to continue shopping or move to checkout
+    document.location.replace("/shopping");
   } else {
     alert(response.statusText);
   }
