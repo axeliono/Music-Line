@@ -1,11 +1,17 @@
-const { Instrument } = require("../../models");
+const { Instrument, Classification } = require("../../models");
 const router = require("express").Router();
 
 //GET all Instruments
 router.get("/", (req, res) => {
-  Instrument.findAll({
-    //input attributes later if needed
-  })
+  Instrument.findAll(
+    {
+    attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
+      include: {
+        model: Classification,
+        attributes: ['name']
+      }
+    }
+  )
     .then((dbInstrumentData) => {
       res.json(dbInstrumentData);
     })
@@ -17,10 +23,14 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   Instrument.findOne({
-    //input attributes later if needed
+    attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
+        include: {
+          model: Classification,
+          attributes: ['name']
+        }, 
     where: {
       id: req.params.id,
-    },
+    },  
   })
     .then((dbInstrumentData) => {
       if (!dbInstrumentData) {
