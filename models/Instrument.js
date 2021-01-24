@@ -48,6 +48,10 @@ Instrument.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
+        image_path: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     },
     {
       sequelize,
