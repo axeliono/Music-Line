@@ -6,15 +6,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color:  rgb(241, 241, 241);
+    background-color:  #ECF0F1;
 }
 
-.nav-bar {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-}
 
 /* top navigation section
 --Inclde: search-bar with the button
@@ -95,9 +89,30 @@ body {
     padding: 20px;
     background-color:  rgb(219, 219, 219);; /* To display boundaries */
 }
+.account {
+    margin: auto 10px;
+}
 
 .cart {
     margin: auto 10px;
+}
+
+.account a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+    transition:  0.35s;
+}
+
+.account a:hover{
+    color: rgb(107, 107, 107);
+}
+
+.account i{
+    font-size: 22px;
+    padding-bottom: 5px;
 }
 
 .cart a{
@@ -105,76 +120,23 @@ body {
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    color:  rgb(163, 0, 0);
-    transition: all 0.32s;
+    color:  rgb(78, 78, 78);
+    transition:  0.35s;
 }
 
 .cart a:hover{
-    color:   rgb(219, 58, 58);
-
+    color: rgb(107, 107, 107);
 }
 
 .cart i{
-    font-size: 30px;
-    padding-bottom: 5px;
-}
-
-
-
-/* .account {
-    margin: auto 10px;
-} */
-
-/* 
-.account a{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(122, 122, 122);
-}
-
-.account i{
     font-size: 22px;
     padding-bottom: 5px;
-} */
-
-
-/* bottom nav-menu/ only menu list
-note: all category menu will be dropped down to show each categories
-note: About and contact menu will have its own page */
-.bot-nav{
-    width: 100%;
-    height: 30%;
-    margin: 0 auto;
-    padding: 0 10%;
-    display: flex;
-    justify-content: space-around;
-    background-color:  rgb(196, 196, 196);
-}
-.bot-nav ul{
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-.bot-nav li{
-    margin: auto 50px;
-}
-
-.bot-nav li a{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 900;
-    color: rgb(75, 75, 75);
 }
 
 /* header img slider */
 .hero {
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 .img-slider{
     overflow: hidden;
@@ -185,13 +147,13 @@ note: About and contact menu will have its own page */
     width: 500%;
     margin: 0;
     left: 0;
-    animation: 30s slider infinite;
+    animation: 25s slider infinite;
 }
 
 .img-slider figure img{
     width: 20%;
     float: left;
-    height: 55vh;
+    height: 50vh;
 }
 
 @keyframes slider {
@@ -249,22 +211,28 @@ note: About and contact menu will have its own page */
 /* footer */
 footer{
     width: 100%;
+    height: 200px;
     margin-top: 100px;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(78, 78, 78);
+    /* bottom: 0; */
     position: absolute;
 }
 
 .contribution {
-    width: 50%;
-    height: 100%;
+    width: 80%;
     margin: auto;
+}
 
+.contribution h2{
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    color:rgb(36, 36, 36);
 }
 
 .contribution ul {
     margin: auto;
     display: flex;
-    flex-direction: column;
 }
 
 .contribution ul h2{
@@ -277,14 +245,32 @@ footer{
     width: 20%;
     margin: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.contribution ul li a{
+.contribution ul li h3{
+    color: rgb(201, 201, 201);
+    letter-spacing: 1px;
+}
+
+.sns-icon{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.sns-icon a{
     text-decoration: none;
     text-align: center;
-    margin: 5px;
-    color: rgb(233, 233, 233);
-
+    font-size: 22px;
+    margin: 15px;
+    color: rgb(133, 133, 133);
+    transition: all 0.35s;
 }
+
+.sns-icon a:hover{
+    color: rgb(184, 184, 184);
+}
+

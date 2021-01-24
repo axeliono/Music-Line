@@ -1,0 +1,124 @@
+section {
+    width: 60%;
+    height: 100%;
+    margin: 20px auto;
+}
+
+fieldset{
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+fieldset h3{
+    padding: 10px 20px;
+    background-color: rgb(58, 58, 58);
+    color: #fff;
+}
+
+.col-topic{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+    border-bottom: 1px solid black;
+}
+
+.item-detail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.item-descript{
+    display:flex;
+    width: 40%;
+}
+
+.item-img{
+    width: 40%
+}
+
+.item-img img{
+    width: 150px;
+    height: 200px;
+}
+
+.item-txt{
+    width: 40%;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+.item-txt p{
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+.price{
+    text-align: center;
+    width: 20%;
+}
+
+.quantity{
+    text-align: center;
+    width: 20%;
+}
+
+.total{
+    text-align: center;
+    width: 20%;
+}
+
+.subtotal{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.subtotal h2:nth-child(1){
+    width: 20%
+}
+
+.subtotal h2:nth-child(2){
+    width: 10%
+}
+
+.proceed{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.proceed button{
+    cursor: pointer;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px;
+    background-color: #cd2418;
+}
+
+.proceed button:hover{
+    background-color: #a50c01;
+}
+
+.proceed button h2{
+    color: #fff;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.proceed button i{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+}

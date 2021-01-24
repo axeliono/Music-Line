@@ -1,136 +1,135 @@
-section {
-    width: 50%;
-    height: 100%;
-    margin: 20px auto;
+.shopping-cart-page{
+    width: 80%;
+    height: 60vh;
+    margin: 50px auto;
 }
 
-fieldset{
+.shopping-cart-page h1{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.adding-cart{
+    width: 80%;
+    height: 60vh;
+    margin: 50px auto;
+}
+
+.cart-list{
+    display: flex;
+    width: 90%;
+    background-color: #E5E9EA;
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.cart-list:hover{
+    background-color: #e2eef1;
+}
+
+.item-list{
     width: 100%;
-    height: 100%;
-    margin-top: 40px;
     display: flex;
-    flex-direction: column;
-}
-
-fieldset h3{
-    padding: 10px 20px;
-    background-color: rgb(58, 58, 58);
-    color: #fff;
-}
-
-.col-topic{
-    width: 98%;
-    display: flex;
-    margin: 10px auto;
-    border-bottom: 1px solid black;
-}
-
-/* item column */
-.col-topic h4:nth-child(1){ 
-    width: 50%;
-    text-align: center;
-}
-
-/* Price column */
-.col-topic h4:nth-child(2){ 
-    width: 20%;
-    text-align: center;
-}
-
-/* quantity column */
-.col-topic h4:nth-child(3){ 
-    width: 20%;
-    text-align: center;
-}
-
-/* total column */
-.col-topic h4:nth-child(4){ 
-    width: 20%;
-    text-align: center;
-}
-
-.item-detail{
-    width: 98%;
-    display:flex;
-    margin: 10px auto;
-}
-
-.item-descript{
-    display:flex;
-    width: 50%;
-}
-
-.item-img{
-    width: 40%
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
 }
 
 .item-img img{
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
-.item-txt{
-    width: 60%;
-    padding: 5px 0;
-    letter-spacing: 1px;
+.remove button{
+    cursor: pointer;
+    border: none;
 }
 
-.price{
-    text-align: center;
+.remove button:hover{
+    color: red;
+}
+
+.remove button i{
+    font-size: 18px;
+}
+
+
+.cart-page{
+    display: flex;
+}
+
+.summary{
+    width: 35%;
+    height: 35vh;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background-color: #E5E9EA;
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+}
+
+.sum-header{
+    width: 100%;
+    color: rgb(240, 69, 69);
+    font-size: 24px;
+}
+
+.sales-tax{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+.summary-contents{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.summary-contents p{
     width: 20%;
-}
-
-.quantity{
-    text-align: center;
-    width: 20%;
-}
-
-.total{
-    text-align: center;
-    width: 20%;
+    margin: auto;
 }
 
 .subtotal{
-    width: 98%;
-    margin: 10px auto;
+    width: 100%;
+    margin-bottom: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
-.subtotal h2:nth-child(1){
-    width: 20%
+.subtotal h2{
+    width: 30%;
+    margin: auto;
 }
 
-.subtotal h2:nth-child(2){
-    width: 10%
-}
-
-.proceed{
-    width: 98%;
+.checkout{
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-.proceed button{
-    width: 35%;
+.checkout button{
+    width: 80%;
+    margin: auto;
     display: flex;
     justify-content: center;
     padding: 10px 5px;
-    background-color: #cd2418;
+    background-color: #cc5047;
+    border-radius: 5px;
 }
 
-.proceed button:hover{
+.checkout button:hover{
     background-color: #a50c01;
 }
 
-.proceed button h2{
+.checkout button h2{
     color: #fff;
     font-weight: 900;
     margin-right: 10px;
 }
 
-.proceed button i{
+.checkout button i{
     color: #fff;
     font-size: 30px;
     font-weight: 900;

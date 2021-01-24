@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-page.css">
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="navigation.css">
 </head>
 
 <body id="home">
@@ -30,132 +31,222 @@
                 </button>
             </div>
 
+            <!-- <div class="account">
+                <a href=""><i class="fas fa-user"></i>Account<span>Sign In</span></a>
+            </div> -->
             <div class="account-cart">
-                <!-- <div class="account">
-                    <a href=""><i class="fas fa-user"></i>Account<span>Sign In</span></a>
-                </div> -->
+                <div class="account">
+                    <a href=""><i class="fas fa-user"></i>Account</a>
+                </div>
                 <div class="cart">
-                    <a href=""><i class="fas fa-shopping-cart"></i><h3>View Cart</h3></a>
+                    <a href=""><i class="fas fa-shopping-cart"></i>Cart</a>
                 </div>
             </div>
         </div>
-        <div class="bot-nav">
+        <div class="nav-area">
+            
             <ul>
-                <li><a href="/cateory">Home</a></li>
-                <li><a href="/cateory">Shop</a></li>
-                <li><a href="/cateory">Contact</a></li>
-                <li><a href="/cateory">Cart</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a>
+                    <ul> 
+                        <li><a href="#">String Instruments</a></li>
+                        <li><a href="#">Woodwind Instruments</a></li>
+                        <li><a href="#">Piano</a></li>
+                        <li><a href="#">Percussion</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
             </ul>
         </div>
     </nav>
 
-    <section>
-
-        <!-- proceed to checkout button -->
-        <div class="proceed">
-            <button type="submit" id="checkout-btn">
-                <h2>Proceed To Checkout</h2>
-                <i class="fas fa-arrow-circle-right"></i>
-            </button>
-        </div>
-
-        <!-- carts -->
-        <fieldset>
-            <h3>Shopping Cart</h3>
-            <div class="col-topic">
-                <h4>Item</h4>
-                <h4>Price</h4>
-                <h4>Quantity</h4>
-                <h4>Total</h4>
-            </div>
-            <div class="item-detail" id="item-img">
-                <!-- item(s)
-                From here, html code will be deleted and it will be re-written from 
-                javascript-->
-                <div class="item-descript">
-                    <div class="item-img">
-                        <img src="../public/images/accordian.jpg" alt="">
-                    </div>
-                    <div class="item-txt" id="itemTxt">
-                        <div class="instrument-name" id="instName">
-                            <h2>Accordian</h2>
+    <section class="shopping-cart-page">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-page">
+            <div class="adding-cart">
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
                         </div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa illum id aliquid exercitationem in blanditiis quasi, aspernatur modi vel quidem numquam totam reprehenderit nobis placeat accusantium, obcaecati, veniam eaque?
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
                     </div>
+                    
                 </div>
-
-                    <h4 class="price">$1000</h4>
-                    <h4 class="quantity">1</h4>
-                    <h4 class="total">$1000</h4>
-
+        
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
+                        </div>
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
+                        </div>
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        </fieldset>
-
-        <div class="subtotal">
-            <h2>SubTotal</h2>
-            <h2>$1000</h2>
+            
+            <div class="summary">
+                <div class="sum-header">
+                    <h1>Summary</h1>
+                </div>
+                <div class="price-calculate summary-contents">
+                    <p>Total</p>
+                    <p>$$$$$$$</p>
+                </div>
+                <div class="sales-tax summary-contents">
+                    <p>Sales Tax</p>
+                    <p>8.25%</p>
+                </div>
+                <div class="subtotal">
+                    <h2>Subtotal</h2>
+                    <h2>$$$$$$$</h2>
+                </div>
+                <div class="checkout">
+                    <button type="submit" id="checkout-btn">
+                        <h2>Proceed To Checkout</h2>
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- proceed to checkout button -->
-        <div class="proceed">
-            <button type="submit" id="checkout-btn">
-                <h2>Proceed To Checkout</h2>
-                <i class="fas fa-arrow-circle-right"></i>
-            </button>
-        </div>
+
     </section>
 
     <footer>
         <div class="contribution">
+            <h2>
+                Contributed By
+            </h2>
             <ul>
-                <h2>
-                    Contributed By
-                </h2>
                 <li>
-                    <h3>name</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/yuniksung" class="icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    
+                    <h3>Lewis, Michael</h3>
+
                 </li>
                 <li>
-                    <h3>name</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/yuniksung" class="icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Sung, Yunik</h3>
+
                 </li>
                 <li>
-                    <h3>name</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/yuniksung" class="icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Stafford, Tatum</h3>
+
                 </li>
                 <li>
-                    <h3>name</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/yuniksung" class="icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Green, Chandler</h3>
+
                 </li>
                 <li>
-                    <h3>name</h3>
-                    <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/yuniksung" class="icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Culbert, Lewis</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Acuna, Daniela</h3>
+
                 </li>
             </ul>
         </div>
