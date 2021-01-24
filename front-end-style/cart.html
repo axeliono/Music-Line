@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-page.css">
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="navigation.css">
 </head>
 
@@ -59,29 +60,114 @@
             </ul>
         </div>
     </nav>
-    <!-- <div class="darken-bg"></div> -->
-    <!-- {{/each}} -->
 
-    <!-- {{#each}} -->
-    <header class="hero">
-        <div class="img-slider">
-            <figure>
-                <img src="../public/banner_images/1.jpg">
-                <img src="../public/banner_images/7.jpg">
-                <img src="../public/banner_images/2.jpg">
-                <img src="../public/banner_images/6.jpg">
-                <img src="../public/banner_images/3.jpg">
-            </figure>
-        </div>
-    </header>
-    <!-- {{/each}} -->
-    <main>
-        <div class="main-header">
-            <h1>We have the best instruments, feel free to shop around!</h1>
+    <section class="shopping-cart-page">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-page">
+            <div class="adding-cart">
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
+                        </div>
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
+                        </div>
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div class="cart-list">
+                    <div class="item-list">
+                        <div class="item-img" id="item-img">
+                            <img src="../public/images/accordian.jpg" alt="">
+                        </div>
+                        <div class="item-name" id="item-name">
+                            <h3>Accordian</h3>
+                            <p>description</p>
+                        </div>
+                        <div class="quantity" id="quantity">
+                            <p>2</p>
+                        </div>
+                        <div class="price" id="price">
+                            <p>$100.00</p>
+                        </div>
+                        <div class="total" id="total">
+                            <p>$200.00</p>
+                        </div>
+                        <div class="remove">
+                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="summary">
+                <div class="sum-header">
+                    <h1>Summary</h1>
+                </div>
+                <div class="price-calculate summary-contents">
+                    <p>Total</p>
+                    <p>$$$$$$$</p>
+                </div>
+                <div class="sales-tax summary-contents">
+                    <p>Sales Tax</p>
+                    <p>8.25%</p>
+                </div>
+                <div class="subtotal">
+                    <h2>Subtotal</h2>
+                    <h2>$$$$$$$</h2>
+                </div>
+                <div class="checkout">
+                    <button type="submit" id="checkout-btn">
+                        <h2>Proceed To Checkout</h2>
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-       
-    </main>
+
+    </section>
 
     <footer>
         <div class="contribution">
