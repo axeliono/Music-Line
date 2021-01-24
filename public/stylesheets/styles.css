@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-size: 10px;
-    color: #FFF;
+    color: #000;
 }
 
 a {
@@ -31,6 +31,104 @@ li {
 
 section {
     padding: 9.5rem 0;
+}
+
+/* Header styles */
+.header-wrapper {
+    background-color: #000;
+    color: #fff;
+}
+
+.header-wrapper header {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-header {
+    height: 8rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.search-bar-wrapper {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar-wrapper input {
+    width: 100%;
+    height: 2.2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: #000;
+    padding: 0.75rem;
+}
+
+.search-bar-wrapper button {
+    width: 2.5rem;
+    border: none;
+    outline: none;
+    background-color: orange;
+}
+
+.icon-group {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.nav-icon i {
+    font-size: 1.2rem;
+}
+
+.bottom-header {
+    border-top: 1px solid #fff;
+    padding-bottom: 12px;
+}
+
+.nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: orange;
 }
 
 /* Shop all instruments styling */
@@ -296,4 +394,336 @@ section {
     .login-btn {
     font-size: 0.85rem;
     }
+}
+
+/* Footer styles */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.main-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.copyright {
+    font-size: 1.5rem;
+}
+
+.contributing {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-text {
+    align-self: center;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.group-names {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.member-name {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.member-name a {
+    font-size: 1.2rem;
+    margin-left: 4px;
+    transition: color 0.3s ease-in;
+}
+
+.member-name a:hover {
+    color: orange;
+}
+
+
+.dropdown {
+    overflow: hidden;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.85rem;
+    display: block;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+
+.dropdown-content a:hover {
+    color: orange;
+}
+
+.dropdown-content a:hover:not(:last-child) {
+    border-bottom: 1px solid orange;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* YUNIK SHOPPING CART STYLES */
+.shopping-cart-page{
+    width: 80%;
+    height: 60vh;
+    margin: 50px auto;
+}
+
+.shopping-cart-page h1{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.adding-cart{
+    width: 85%;
+    margin: 50px auto 0 auto;
+}
+
+.cart-list{
+    display: flex;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-list:hover{
+    transform: scale(1.1);
+}
+
+.item-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.item-img img{
+    width: 100px;
+    height: 100px;
+}
+
+.item-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.item-group {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-text {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #cdcdcd;
+}
+
+.quantity,
+.price,
+.total {
+    font-size: 0.85rem;
+}
+
+.remove i {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.remove i:hover{
+    color: red;
+}
+
+.summary{
+    width: 65%;
+    height: 40vh;
+    margin: 50px auto 0 auto;
+    padding: 20px 30px;
+    background-color: #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sum-header{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.summary-wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-contents {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.summary-contents p {
+    font-size: 1rem;
+}
+
+.summary-total,
+.summary-tax,
+.summary-subtotal {
+    font-size: 1rem;
+}
+
+.sales-tax {
+    border-bottom: 1px dotted #000;
+}
+
+.subtotal p,
+.summary-subtotal {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.checkout{
+    width: 50%;
+    display: flex;
+    margin: 1rem auto 0 auto;
+    
+}
+
+.checkout button{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.checkout button i {
+    font-size: 1.8rem;
+}
+
+.checkout button:hover{
+    background-color: orange;
+}
+
+
+/* YUNI HERO STYLES */
+.hero {
+    margin-top: 5rem;
+}
+
+.img-slider{
+    overflow: hidden;
+}
+
+.img-slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 25s slider infinite;
+}
+
+.img-slider figure img{
+    width: 20%;
+    float: left;
+    height: 50vh;
+    object-fit: cover;
+}
+
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+.hero-title {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 1px;
+}
+
+.hero-title span {
+    display: block;
+    font-size: 1.75rem;
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.hero-content {
+    height: 100%;
+    margin-top: 3.5rem;
+    margin-bottom: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
 }
