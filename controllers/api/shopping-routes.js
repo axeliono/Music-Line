@@ -1,8 +1,58 @@
-const { Shopping_Cart_Selection, Sale, Instrument, User, Classification } = require("../../models");
-const withAuth = require('../../utils/auth');
+const {
+  Shopping_Cart_Selection,
+  Sale,
+  Instrument,
+  User,
+  Classification,
+} = require("../../models");
+const withAuth = require("../../utils/auth");
 const router = require("express").Router();
 
-router.get("/:id", (req, res) => {
+//find all shopping_cart_selections that have a user_id associated with the current logged in user
+router.get("/", withAuth, (req, res) => {
+  Shopping_Cart_Selection.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    include: {
+      model: Shopping_Cart_Selection,
+      attributes: ["id"],
+      include: [
+        {
+          model: Sale,
+          attributes: ["sum_price"],
+        },
+        {
+          model: Instrument,
+          attributes: ["name", "origin", "manufacturer", "price"],
+          include: {
+            model: Classification,
+            attributes: ["name"],
+          },
+        },
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    },
+  })
+    .then((dbShopData) => {
+      if (!dbShopData) {
+        res
+          .status(404)
+          .json({ message: "no shopping cart found with this id" });
+        return;
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//we may not need this route since we will always want to pull ALL selections that the user has in the shopping cart and not just one
+router.get("/:id", withAuth, (req, res) => {
   Shopping_Cart_Selection.findOne({
     //input attributes later if needed
     where: {
@@ -10,26 +60,26 @@ router.get("/:id", (req, res) => {
     },
     include: {
       model: Shopping_Cart_Selection,
-      attributes: ['id'],
+      attributes: ["id"],
       include: [
-          {
-              model: Sale,
-              attributes: ['sum_price']                
+        {
+          model: Sale,
+          attributes: ["sum_price"],
+        },
+        {
+          model: Instrument,
+          attributes: ["name", "origin", "manufacturer", "price"],
+          include: {
+            model: Classification,
+            attributes: ["name"],
           },
-          {
-              model: Instrument,
-              attributes: ['name', 'origin', 'manufacturer', 'price'],
-              include: {
-                  model: Classification,
-                  attributes: ['name']
-              }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
-      ]
-    }
+        },
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    },
   })
     .then((dbShopData) => {
       if (!dbShopData) {
@@ -46,7 +96,7 @@ router.get("/:id", (req, res) => {
 });
 
 //Create new Shopping_Cart_Selection
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Shopping_Cart_Selection.create({
     sale_id: req.body.sale_id,
     instrument_id: req.body.instrument_id,
@@ -61,7 +111,7 @@ router.post("/", (req, res) => {
 });
 
 //Delete Shopping_Cart_Selection
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Shopping_Cart_Selection.destroy({
     where: {
       id: req.params.id,

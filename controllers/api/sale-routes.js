@@ -1,25 +1,21 @@
 const { Sale, Instrument, User } = require("../../models");
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 const router = require("express").Router();
 
 //GET all Sales
 router.get("/", (req, res) => {
   Sale.findAll({
-    attributes: [
-      'id',
-      'sum_price',
-      'created_at'
-    ],
+    attributes: ["id", "sum_price", "created_at"],
     include: [
       {
-      model: Instrument,
-      attributes: ['id', 'name', 'origin', 'manufacturer', 'price']
+        model: Instrument,
+        attributes: ["id", "name", "origin", "manufacturer", "price"],
       },
       {
-      model: User,
-      attributes: ['username']
-      }
-    ]
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   })
     .then((dbSaleData) => {
       res.json(dbSaleData);
@@ -30,27 +26,23 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Sale.findOne({
     //input attributes later if needed
     where: {
       id: req.params.id,
     },
-    attributes: [
-      'id',
-      'sum_price',
-      'created_at'
-    ],
+    attributes: ["id", "sum_price", "created_at"],
     include: [
       {
-      model: Instrument,
-      attributes: ['id', 'name', 'origin', 'manufacturer', 'price']
+        model: Instrument,
+        attributes: ["id", "name", "origin", "manufacturer", "price"],
       },
       {
-      model: User,
-      attributes: ['username']
-      }
-    ]
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   })
     .then((dbSaleData) => {
       if (!dbSaleData) {
@@ -65,7 +57,7 @@ router.get("/:id", (req, res) => {
 });
 
 //Create new Sale
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Sale.create({
     sum_price: req.body.sum_price,
     user_id: req.body.user_id,
@@ -80,7 +72,7 @@ router.post("/", (req, res) => {
 });
 
 //Delete Sale
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Sale.destroy({
     where: {
       id: req.params.id,
