@@ -1,56 +1,63 @@
-    <section class="shopping-cart-page">
-        <h1>Your Shopping Cart</h1>
-        <div class="cart-page">
-            <div class="adding-cart">
-
-                {{!-- First item --}}
-                <div class="cart-list">
-                    <div class="item-list">
-                        <div class="item-img" id="item-img">
-                            {{!-- <img src="../public/images/accordian.jpg" alt=""> --}}
-                        </div>
-                        <div class="item-name" id="item-name">
-                            {{!-- <h3>Accordian</h3>
-                            <p>description</p> --}}
-                        </div>
-                        <div class="quantity" id="quantity">
-                            {{!-- <p>2</p> --}}
-                        </div>
-                        <div class="price" id="price">
-                            {{!-- <p>$100.00</p> --}}
-                        </div>
-                        <div class="total" id="total">
-                            {{!-- <p>$200.00</p> --}}
-                        </div>
-                        <div class="remove">
-                            <button id="remove-cart"><i class="fas fa-trash-alt"></i></button>
-                        </div>
+<section>
+    <div class="container">
+        <div class="section-name">Your Shopping Cart</div>
+        <div class="adding-cart">
+    
+            <!-- First item -->
+            <!-- {{#each}} item in their cart -->
+            <div class="cart-list">
+                <div class="item-list">
+                    <div class="item-img" id="item-img">
+                        <img src="images2/accordian.jpg" alt="">
                     </div>
-                    
-                </div>        
-            
+                    <div class="item-name" id="item-name">
+                        Accordian
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Qty</div>
+                        <div class="quantity" id="quantity">2</div>
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Price</div>
+                        <div class="price" id="price">$100.00</div>
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Total</div>
+                        <div class="total" id="total">$200.00</div>
+                    </div>
+                    <div class="remove" id="remove-cart">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- end of each {{ /#each }} -->
+
+            <!-- Summary of Cart -->       
             <div class="summary">
                 <div class="sum-header">
-                    <h1>Summary</h1>
+                    Summary
                 </div>
-                <div class="price-calculate summary-contents">
-                    <p>Total</p>
-                    {{!-- <p>$$$$$$$</p> --}}
-                </div>
-                <div class="sales-tax summary-contents">
-                    <p>Sales Tax</p>
-                    <p>8.25%</p>
-                </div>
-                <div class="subtotal">
-                    <h2>Subtotal</h2>
-                    {{!-- <h2>$$$$$$$</h2> --}}
+                <div class="summary-wrapper">
+                    <div class="summary-contents">
+                        <p>Total</p>
+                        <div class="summary-total">$250.00</div>
+                    </div>
+                    <div class="sales-tax summary-contents">
+                        <p>Sales Tax</p>
+                        <div class="summary-tax">8.25%</div>
+                    </div>
+                    <div class="subtotal summary-contents">
+                        <p>Subtotal</p>
+                        <div class="summary-subtotal">$277.00</div>
+                    </div>
                 </div>
                 <div class="checkout">
                     <button type="submit" id="checkout-btn">
-                        <h2>Proceed To Checkout</h2>
+                        Checkout
                         <i class="fas fa-arrow-circle-right"></i>
                     </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
