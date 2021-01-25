@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
         classif.get({ plain: true })
       );
 
-      res.render("main", classes);
+      res.render("home-page", classes);
     })
     .catch((err) => {
       console.log(err);
@@ -47,4 +47,4 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
-module.express = router;
+module.exports = router;
