@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-page.css">
     <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="tatums.css">
 </head>
 
 <body id="home">
@@ -63,17 +64,26 @@
     <!-- {{/each}} -->
 
     <!-- {{#each}} -->
-    <header class="hero">
-        <div class="img-slider">
-            <figure>
-                <img src="../public/banner_images/1.jpg">
-                <img src="../public/banner_images/7.jpg">
-                <img src="../public/banner_images/2.jpg">
-                <img src="../public/banner_images/6.jpg">
-                <img src="../public/banner_images/3.jpg">
-            </figure>
+    <section class="search-results">
+
+    </section>
+    <section class="shop-by-category">
+        <div class="container">
+            <div class="section-name">Shop By Category: <span id="classification-name" class="classification-name">Winds</span></div>
+            <div class="grid-wrapper">
+                <!-- {{#each}} instrument goes in a card -->
+                <a href="#" class="card">
+                    <img src="images2/cello.png" alt="">
+                    <div class="card-details">
+                        <div class="instrument-name">Cello</div>
+                        <div class="instrument-description">Gibson</div>
+                        <div class="instrument-price"><i class="fas fa-ellipsis-h"></i> $900</div>
+                    </div>
+                </a>
+                <!-- end of each -->
+            </div>
         </div>
-    </header>
+    </section>
     <!-- {{/each}} -->
     <main>
         <div class="main-header">
