@@ -13,85 +13,125 @@
     <link rel="stylesheet" href="tatums.css">
 </head>
 
-<body id="home">
-    <!-- {{#each}} -->
-    <nav class="nav-bar">
-        <!-- Logo, search bar, search-button, & cart drop-down menu -->
-        <div class="top-nav">
-            <div class="logo"> 
-                <a href="#home">
-                    <H1>Music Line</H1>
-                </a>
-            </div>
-            <!-- Search input with button -->
-            <div class="search-bar">
-                <input placeholder="Enter keywoards, item # or catalog #" id="type-search"></form>
-                <button class="search-btn" id="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-
-            <!-- <div class="account">
-                <a href=""><i class="fas fa-user"></i>Account<span>Sign In</span></a>
-            </div> -->
-            <div class="account-cart">
-                <div class="account">
-                    <a href=""><i class="fas fa-user"></i>Account</a>
+<body>
+    <!-- Header / Navigation -->
+    <div class="header-wrapper">
+        <div class="container">
+            <header>
+                <div class="top-header">
+                    <a href="#" class="logo">
+                        <img src="images/MLlogo.png" alt="">
+                    </a>
+                    <!-- Search bar -->
+                    <div class="search-bar-wrapper">
+                        <input type="text" placeholder="Search instruments by keywords" id="search-input">
+                        <button class="btn btn-search" id="btn-search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="icon-group">
+                        <a href="/login" class="nav-icon m-right">
+                            <i class="fas fa-user"></i>
+                            Account
+                        </a>
+                        <a href="/shopping-cart" class="nav-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
+                        </a>
+                    </div>
                 </div>
-                <div class="cart">
-                    <a href=""><i class="fas fa-shopping-cart"></i>Cart</a>
+                <div class="bottom-header">
+                    <!-- Navigation -->
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/shop" class="nav-link">Shop All</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Toggle dropdown menu to shop by category -->
+                                <div class="dropdown">
+                                    <a href="#" class="nav-link dropbtn">Shop By Category <i class="fa fa-caret-down"></i></a>
+                                    <div class="dropdown-content">
+                                        <a href="#" id="string-instruments">String Instruments</a>
+                                        <a href="#" id="free-reed-instruments">Free Reed Instruments</a>
+                                        <a href="#" id="reed-instruments">Reed Instruments</a>
+                                        <a href="#" id="brass-instruments">Brass Instruments</a>
+                                        <a href="#" id="fipple-flutes">Fipple Flutes</a>
+                                        <a href="#" id="woodwinds">Woodwinds</a>
+                                        <a href="#" id="percussion">Percussion</a>
+                                        <a href="#" id="unpitched-percussion">Unpitched Percussion</a>
+                                        <a href="#" id="pitched-percussion">Pitched Percussion</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
+            </header>
         </div>
-        <div class="nav-area">
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a>
-                    <ul> 
-                        <li><a href="#">String Instruments</a></li>
-                        <li><a href="#">Woodwind Instruments</a></li>
-                        <li><a href="#">Piano</a></li>
-                        <li><a href="#">Percussion</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Cart</a></li>
-            </ul>
-        </div>
-    </nav>
+    </div>
     <!-- <div class="darken-bg"></div> -->
     <!-- {{/each}} -->
 
     <!-- {{#each}} -->
-    <section class="search-results">
+    <!-- <section class="search-results">
 
-    </section>
-    <section class="shop-by-category">
-        <div class="container">
-            <div class="section-name">Shop By Category: <span id="classification-name" class="classification-name">Winds</span></div>
-            <div class="grid-wrapper">
-                <!-- {{#each}} instrument goes in a card -->
-                <a href="#" class="card">
-                    <img src="images2/cello.png" alt="">
-                    <div class="card-details">
-                        <div class="instrument-name">Cello</div>
-                        <div class="instrument-description">Gibson</div>
-                        <div class="instrument-price"><i class="fas fa-ellipsis-h"></i> $900</div>
+    </section> -->
+
+    <!-- {{/each}} -->
+    <!-- Login/Signup Page -->
+<section class="login-signup">
+    <div class="container">
+        <div class="forms-wrapper">
+            <div class="login-side">
+                <div class="login-text">
+                    <span>Existing users...</span>
+                    Log In:
+                </div>
+                <form class="login-form" id="login-form">
+                    <div class="input-group">
+                        <label for="login-email">Email:</label>
+                        <input type="text" name="login-email" id="login-email">
                     </div>
-                </a>
-                <!-- end of each -->
+                    <div class="input-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" name="login-password" id="login-password">
+                    </div>
+                    <button class="btn login-btn" id="login-btn">Log In</button>
+                </form>
+            </div>
+            <div class="line"></div>
+            <div class="signup-side">
+                <div class="signup-text">
+                    <span>New users...</span>
+                    Sign Up:
+                </div>
+                <form class="signup-form" id="signup-form">
+                    <div class="input-group">
+                        <label for="signup-email">Email:</label>
+                        <input type="text" name="signup-email" id="signup-email">
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-username">Username:</label>
+                        <input type="text" name="signup-username" id="signup-username">
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password">Password:</label>
+                        <input type="password" name="signup-password" id="signup-password">
+                    </div>
+                    <button class="btn login-btn" id="signup-btn">Sign Up</button>
+                </form>
             </div>
         </div>
-    </section>
-    <!-- {{/each}} -->
-    <main>
-        <div class="main-header">
-            <h1>We have the best instruments, feel free to shop around!</h1>
-        </div>
-
-       
-    </main>
+    </div>
+</section>
+<script src="/javascript/account.js"></script>
 
     <!-- <footer>
         <div class="contribution">
