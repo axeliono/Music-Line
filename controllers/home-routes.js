@@ -39,6 +39,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+
 //For logging in from homepage
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
