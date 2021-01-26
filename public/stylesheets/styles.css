@@ -738,3 +738,125 @@ section {
     font-size: 1.4rem;
     text-align: center;
 }
+
+/* Contact Section styles */
+.contact-section {
+    padding-top: 6.5rem;
+}
+
+.contact-section .forms-wrapper {
+    margin-top: 4rem;
+    height: 400px;
+}
+
+.contact-form-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-text {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.contact-form {
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-group label,
+.email-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.select-group {
+    margin-bottom: 1rem;
+}
+
+.select-group select {
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+    outline: none;
+    border: 1px solid #bdbdbd;
+}
+
+.email-content {
+    width: 100%;
+}
+
+.email-content textarea {
+    width: 100%;
+    height: 200px;
+    outline: none;
+    border: 1px solid #bdbdbd;
+    font-size: 0.75rem;
+}
+
+.email-btn {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.email-btn:hover {
+    background-color: orange;
+    color: #fff;
+}
+
+.other-contact-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.other-contact-wrapper .contact-text {
+    margin-top: 0.6rem;
+}
+
+.contact-list {
+    height: 90%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.contact-item i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0.5rem auto;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-item i:hover {
+    color: orange;
+}
