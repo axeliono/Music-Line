@@ -18,28 +18,6 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-//we may want to remove this since there is another login route (unsure which one we need or if we need both)
-router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("login");
-});
-
-//we may not need this if we want people to be able sign up even if someone is logged in
-router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("signup");
-});
-
-
 //For logging in from homepage
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -47,5 +25,46 @@ router.get("/login", (req, res) => {
     return;
   }
   res.render("login");
+});
+router.get("/shop/:category", (req, res) => {
+  Instrument.findAll({
+    where: {
+      category: req.params.category,
+    },
+    attributes: ["id", "name", "origin", "manufacturer", "price"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop", { instruments });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+router.get("/shop", (req, res) => {
+  Instrument.findAll({
+    attributes: ["id", "name", "origin", "manufacturer", "price"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop-category", { instruments });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 module.exports = router;

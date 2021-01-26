@@ -7,7 +7,7 @@ const instrumentData = [
     classification_id: 1,
     price: 46.00,
     manufacturer: 'Fender',
-    image_path: '/images.autoharp.jpg'
+    image_path: '/images/autoharp.jpg'
   },
   {
     name: 'Banjo',
@@ -15,14 +15,14 @@ const instrumentData = [
     classification_id: 1,
     price: 215.00,
     manufacturer: 'Baldwin',
-    image_path: '/images.banjo.jpg'
+    image_path: '/images/banjo.jpg'
   },
   {
     name: 'Cello',
     classification_id: 1,
     price: 900.00,
     manufacturer: 'Gibson',
-    image_path: '/images.cello.jpg'
+    image_path: '/images/cello.jpg'
   },
   {
     name: 'Fiddle',
@@ -30,7 +30,7 @@ const instrumentData = [
     classification_id: 1,
     price: 620.00,
     manufacturer: 'Harman',
-    image_path: '/images.fiddle.jpg'
+    image_path: '/images/fiddle.jpg'
   },
   {
     name: 'Guitar',
@@ -38,7 +38,7 @@ const instrumentData = [
     classification_id: 1,
     price: 1500.00,
     manufacturer: 'Yamaha',
-    image_path: '/images.guitar.jpg'
+    image_path: '/images/guitar.jpg'
   },
   {
     name: 'Harpsichord',
@@ -46,7 +46,7 @@ const instrumentData = [
     classification_id: 1,
     price: 25.00,
     manufacturer: 'Steinway',
-    image_path: '/images.harpsichord.jpg'
+    image_path: '/images/harpsichord.jpg'
   },
   {
     name: 'Lute',
@@ -54,7 +54,7 @@ const instrumentData = [
     classification_id: 1,
     price: 66.00,
     manufacturer: 'Sennheiser',
-    image_path: '/images.lute.jpg'
+    image_path: '/images/lute.jpg'
   },
   {
     name: 'Accordion',
@@ -62,7 +62,7 @@ const instrumentData = [
     classification_id: 2,
     price: 254.00,
     manufacturer: 'Fender',
-    image_path: '/images.accordion.jpg'
+    image_path: '/images/accordion.jpg'
   },
   {
     name: 'Bagpipe',
@@ -70,7 +70,7 @@ const instrumentData = [
     classification_id: 3,
     price: 895.00,
     manufacturer: 'Wallace',
-    image_path: '/images.bagpipe.jpg'
+    image_path: '/images/bagpipe.jpg'
   },
   {
     name: 'Bassoon',
@@ -78,7 +78,7 @@ const instrumentData = [
     classification_id: 3,
     price: 567.00,
     manufacturer: 'Gibson',
-    image_path: '/images.bassoon.jpg'
+    image_path: '/images/bassoon.jpg'
   },
   {
     name: 'Bugle',
@@ -86,7 +86,7 @@ const instrumentData = [
     classification_id: 4,
     price: 45.00,
     manufacturer: 'Harman',
-    image_path: '/images.bugle.jpg'
+    image_path: '/images/bugle.jpg'
   },
   {
     name: 'Calliope',
@@ -94,7 +94,7 @@ const instrumentData = [
     classification_id: 5,
     price: 21.00,
     manufacturer: 'Yamaha',
-    image_path: '/images.calliope.jpg'
+    image_path: '/images/calliope.jpg'
   },
 {
     name: 'Lyre',
@@ -102,7 +102,7 @@ const instrumentData = [
     classification_id: 1,
     price: 950.00,
     manufacturer: 'Roland',
-    image_path: '/images.lyre.jpg'
+    image_path: '/images/lyre.jpg'
   },
 {
     name: 'Mandolin',
@@ -110,7 +110,7 @@ const instrumentData = [
     classification_id: 1,
     price: 457.00,
     manufacturer: 'Forte',
-    image_path: '/images.mandolin.jpg'
+    image_path: '/images/mandolin.jpg'
 },
 {
   name: 'Piano',
@@ -118,7 +118,7 @@ const instrumentData = [
   classification_id: 1,
   price: 9000.00,
   manufacturer: 'Leblanc',
-  image_path: '/images.piano.jpg'
+  image_path: '/images/piano.jpg'
 },
 {
   name: 'Sitar',
@@ -126,7 +126,7 @@ const instrumentData = [
   classification_id: 1,
   price: 45.00,
   manufacturer: 'Roland',
-  image_path: '/images.sitar.jpg'
+  image_path: '/images/sitar.jpg'
 },
 {
   name: 'Ukulele',
@@ -134,7 +134,7 @@ const instrumentData = [
   classification_id: 1,
   price: 325.00,
   manufacturer: 'Seagull',
-  image_path: '/images.ukulele.jpg'
+  image_path: '/images/ukulele.jpg'
 },
 {
   name: 'Viola',
@@ -142,7 +142,7 @@ const instrumentData = [
   classification_id: 1,
   price: 156.00,
   manufacturer: 'Rickenbacher',
-  image_path: '/images.viola.jpg'
+  image_path: '/images/viola.jpg'
 },
 {
   name: 'Violin',
@@ -150,7 +150,7 @@ const instrumentData = [
   classification_id: 1,
   price: 723.00,
   manufacturer: 'Ovation',
-  image_path: '/images.violin.jpg'
+  image_path: '/images/violin.jpg'
 },
 {
   name: 'Clarinet',
@@ -158,7 +158,7 @@ const instrumentData = [
   classification_id: 3,
   price: 650.00,
   manufacturer: 'Steinway',
-  image_path: '/images.clarinet.jpg'
+  image_path: '/images/clarinet.jpg'
 },
 {
   name: 'Flute',
@@ -166,7 +166,7 @@ const instrumentData = [
   classification_id: 6,
   price: 487.00,
   manufacturer: 'Sennheiser',
-  image_path: '/images.flute.jpg'
+  image_path: '/images/flute.jpg'
 },
 {
   name: 'French horn',
@@ -174,7 +174,7 @@ const instrumentData = [
   classification_id: 4,
   price: 23.00,
   manufacturer: 'Roland',
-  image_path: '/images.frenchHorn.jpg'
+  image_path: '/images/frenchHorn.jpg'
 },
 {
   name: 'Harmonica',
@@ -182,7 +182,7 @@ const instrumentData = [
   classification_id: 2,
   price: 658.00,
   manufacturer: 'Forte',
-  image_path: '/images.harmonica.jpg'
+  image_path: '/images/harmonica.jpg'
 },
 {
   name: 'Oboe',
@@ -190,7 +190,7 @@ const instrumentData = [
   classification_id: 3,
   price: 148.00,
   manufacturer: 'Howarth of London',
-  image_path: '/images.oboe.jpg'
+  image_path: '/images/oboe.jpg'
 },
 {
   name: 'Piccolo',
@@ -198,7 +198,7 @@ const instrumentData = [
   classification_id: 6,
   price: 65.00,
   manufacturer: 'Seagull',
-  image_path: '/images.piccolo.jpg'
+  image_path: '/images/piccolo.jpg'
 },
 {
   name: 'Pipe organ',
@@ -214,7 +214,7 @@ const instrumentData = [
   classification_id: 5,
   price: 37.00,
   manufacturer: 'Ovation',
-  image_path: '/images.recorder.jpg'
+  image_path: '/images/recorder.jpg'
 },
 {
   name: 'Saxophone',
@@ -222,7 +222,7 @@ const instrumentData = [
   classification_id: 3,
   price: 755.00,
   manufacturer: 'Harman',
-  image_path: '/images.saxophone.jpg'
+  image_path: '/images/saxophone.jpg'
 },
 {
   name: 'Trombone',
@@ -230,7 +230,7 @@ const instrumentData = [
   classification_id: 4,
   price: 235.00,
   manufacturer: 'Yamaha',
-  image_path: '/images.trombone.jpg'
+  image_path: '/images/trombone.jpg'
 },
 {
   name: 'Trumpet',
@@ -238,7 +238,7 @@ const instrumentData = [
   classification_id: 4,
   price: 468.00,
   manufacturer: 'Steinway',
-  image_path: '/images.trumpet.jpg'
+  image_path: '/images/trumpet.jpg'
 },
 {
   name: 'Tuba',
@@ -246,7 +246,7 @@ const instrumentData = [
   classification_id: 4,
   price: 1058.00,
   manufacturer: 'Sennheiser',
-  image_path: '/images.tuba.jpg'
+  image_path: '/images/tuba.jpg'
 },
 {
   name: 'Barrel drum',
@@ -254,7 +254,7 @@ const instrumentData = [
   classification_id: 7,
   price: 658.00,
   manufacturer: 'Yamaha',
-  image_path: '/images.barrelDrum.jpg'
+  image_path: '/images/barrelDrum.jpg'
 },
 {
   name: 'Bass drum',
@@ -262,7 +262,7 @@ const instrumentData = [
   classification_id: 7,
   price: 52.00,
   manufacturer: 'Steinway',
-  image_path: '/images.bassDrum.jpg'
+  image_path: '/images/bassDrum.jpg'
 },
 {
   name: 'Bongo drums',
@@ -270,7 +270,7 @@ const instrumentData = [
   classification_id: 7,
   price: 458.00,
   manufacturer: 'Sennheiser',
-  image_path: '/images.BongoDrums.jpg'
+  image_path: '/images/BongoDrums.jpg'
 },
 {
   name: 'Drum',
@@ -286,7 +286,7 @@ const instrumentData = [
   classification_id: 7,
   price: 98.00,
   manufacturer: 'Forte',
-  image_path: '/images.snareDrum.jpg'
+  image_path: '/images/snareDrum.jpg'
 },
 {
   name: 'Cowbell',
@@ -294,7 +294,7 @@ const instrumentData = [
   classification_id: 8,
   price: 97.00,
   manufacturer: 'Howarth of London',
-  image_path: '/images.cowbell.jpg'
+  image_path: '/images/cowbell.jpg'
 },
 {
   name: 'Cymbal',
@@ -302,7 +302,7 @@ const instrumentData = [
   classification_id: 8,
   price: 49.00,
   manufacturer: 'Seagull',
-  image_path: '/images.cymbal.jpg'
+  image_path: '/images/cymbal.jpg'
 },
 {
   name: 'Gong',
@@ -310,7 +310,7 @@ const instrumentData = [
   classification_id: 8,
   price: 859.00,
   manufacturer: 'Sennheiser',
-  image_path: '/images.tuba.jpg'
+  image_path: '/images/tuba.jpg'
 },
 {
   name: 'Maraca',
@@ -318,7 +318,7 @@ const instrumentData = [
   classification_id: 8,
   price: 29.00,
   manufacturer: 'Ovation',
-  image_path: '/images.maraca.jpg'
+  image_path: '/images/maraca.jpg'
 },
 {
   name: 'Tambourine',
@@ -326,7 +326,7 @@ const instrumentData = [
   classification_id: 8,
   price: 47.00,
   manufacturer: 'Seagull',
-  image_path: '/images.tambourine.jpg'
+  image_path: '/images/tambourine.jpg'
 },
 {
   name: 'Triangle',
@@ -334,7 +334,7 @@ const instrumentData = [
   classification_id: 8,
   price: 237.00,
   manufacturer: 'Yamaha',
-  image_path: '/images.triangle.jpg'
+  image_path: '/images/triangle.jpg'
 },
 {
   name: 'Xylophone',
@@ -342,7 +342,7 @@ const instrumentData = [
   classification_id: 9,
   price: 496.00,
   manufacturer: 'Steinway',
-  image_path: '/images.xylophone.jpg'
+  image_path: '/images/xylophone.jpg'
 },
 ];
 const seedInstruments = () => Instrument.bulkCreate(instrumentData);
