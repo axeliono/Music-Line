@@ -3,17 +3,18 @@ const router = require("express").Router();
 
 //GET all Instruments
 router.get("/", (req, res) => {
-  Instrument.findAll(
-    {
-    attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
-      include: {
-        model: Classification,
-        attributes: ['name']
-      }
-    }
-  )
+  Instrument.findAll({
+    attributes: ["id", "name", "origin", "manufacturer", "price"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
     .then((dbInstrumentData) => {
-      res.json(dbInstrumentData);
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop", { instruments });
     })
     .catch((err) => {
       console.log(err);
@@ -23,14 +24,14 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   Instrument.findOne({
-    attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
-        include: {
-          model: Classification,
-          attributes: ['name']
-        }, 
+    attributes: ["id", "name", "origin", "manufacturer", "price"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
     where: {
       id: req.params.id,
-    },  
+    },
   })
     .then((dbInstrumentData) => {
       if (!dbInstrumentData) {
