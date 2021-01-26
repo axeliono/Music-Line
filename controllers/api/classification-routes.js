@@ -21,14 +21,14 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    attributes: ['id', 'name']
   })
     .then((dbClassData) => {
       if (!dbClassData) {
-        res
-          .status(404)
-          .json({ message: "no Classification found with this id" });
+        res.status(404).json({ message: "no Classification found with this id" });
         return;
       }
+      res.json(dbClassData);
     })
     .catch((err) => {
       console.log(err);
