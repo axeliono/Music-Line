@@ -46,19 +46,22 @@ Instrument.init(
         // instrument's price
         price: {
             type: DataTypes.DECIMAL,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isDecimal: true
+            }
         },
         image_path: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     },
     {
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'instrument'
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'instrument'
     }
 );
 
