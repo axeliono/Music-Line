@@ -111,4 +111,27 @@ router.get('/shop/:id', (req, res) => {
   });
 });
 
+router.get('/shop/category/:id', (req, res) => {
+  Instrument.findAll({
+    where: {
+      classification_id: req.params.id
+    },
+    attributes: ["id", "name", "classification_id", "origin", "manufacturer", "price", "image_path"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    }
+  })
+  .then(dbInstrumentData => {
+    const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop-category", { instruments });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 module.exports = router;

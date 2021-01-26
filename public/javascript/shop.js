@@ -3,6 +3,7 @@
 async function instrumentCardHandler (event) {
     event.preventDefault();
 
+    // get ID from window
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -12,13 +13,12 @@ async function instrumentCardHandler (event) {
     });
 
     if (response.ok) {
+        // reload document to single page matching id
         document.location.replace('/single-instrument');
     } else {
         alert(response.statusText);
     }
-    // get ID from name of instrument
-    // reload document to single page matching id
-}
+};
 
 document.querySelector('.card').addEventListener('click', instrumentCardHandler);
 
