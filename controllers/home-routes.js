@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Classification } = require("../models");
+const { Classification, Instrument } = require("../models");
 
 router.get("/", (req, res) => {
   console.log("======================");
@@ -53,7 +53,7 @@ router.get("/shop/:category", (req, res) => {
       const instruments = dbInstrumentData.map((instrument) =>
         instrument.get({ plain: true })
       );
-      res.render("shop", { instruments });
+      res.render("shop-category", { instruments });
     })
     .catch((err) => {
       console.log(err);
@@ -62,18 +62,19 @@ router.get("/shop/:category", (req, res) => {
 });
 
 router.get("/shop", (req, res) => {
-  Instrument.findAll({
-    attributes: ["id", "name", "origin", "manufacturer", "price"],
-    include: {
-      model: Classification,
-      attributes: ["name"],
-    },
-  })
+  instruments
+    .findAll({
+      attributes: ["id", "name", "origin", "manufacturer", "price"],
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    })
     .then((dbInstrumentData) => {
       const instruments = dbInstrumentData.map((instrument) =>
         instrument.get({ plain: true })
       );
-      res.render("shop-category", { instruments });
+      res.render("shop", { instruments });
     })
     .catch((err) => {
       console.log(err);
