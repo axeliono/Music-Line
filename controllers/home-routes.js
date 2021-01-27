@@ -81,4 +81,23 @@ router.get("/shop", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get("/contact", (req, res) => {
+  console.log("======================");
+  Classification.findAll({
+    attributes: ["name"],
+  })
+    .then((dbClassData) => {
+      const classes = dbClassData.map((classif) =>
+        classif.get({ plain: true })
+      );
+
+      res.render("contact", classes);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
