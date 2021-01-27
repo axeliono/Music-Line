@@ -22,7 +22,7 @@ const instrumentData = [
     classification_id: 1,
     price: 900.00,
     manufacturer: 'Gibson',
-    image_path: '/images/cello.jpg'
+    image_path: '/images/cello.png'
   },
   {
     name: 'Fiddle',
@@ -57,12 +57,12 @@ const instrumentData = [
     image_path: '/images/lute.jpg'
   },
   {
-    name: 'Accordion',
+    name: 'Accordian',
     origin: 'Europe',
     classification_id: 2,
     price: 254.00,
     manufacturer: 'Fender',
-    image_path: '/images/accordion.jpg'
+    image_path: '/images/accordian.jpg'
   },
   {
     name: 'Bagpipe',
@@ -142,7 +142,7 @@ const instrumentData = [
   classification_id: 1,
   price: 156.00,
   manufacturer: 'Rickenbacher',
-  image_path: '/images/viola.jpg'
+  image_path: '/images/viola.png'
 },
 {
   name: 'Violin',
@@ -202,11 +202,11 @@ const instrumentData = [
 },
 {
   name: 'Pipe organ',
-  origin: '',
+  origin: 'Greece',
   classification_id: 2,
   price: 25000.00,
   manufacturer: 'Rickenbacher',
-  image_path: ''
+  image_path: '/images/pipeOrgan.jpg'
 },
 {
   name: 'Recorder',
@@ -214,7 +214,7 @@ const instrumentData = [
   classification_id: 5,
   price: 37.00,
   manufacturer: 'Ovation',
-  image_path: '/images/recorder.jpg'
+  image_path: '/images/recorder.jpeg'
 },
 {
   name: 'Saxophone',
@@ -249,7 +249,7 @@ const instrumentData = [
   image_path: '/images/tuba.jpg'
 },
 {
-  name: 'Barrel drum',
+  name: 'Barrel Drum',
   origin: 'Cuba',
   classification_id: 7,
   price: 658.00,
@@ -257,7 +257,7 @@ const instrumentData = [
   image_path: '/images/barrelDrum.jpg'
 },
 {
-  name: 'Bass drum',
+  name: 'Bass Drum',
   origin: '',
   classification_id: 7,
   price: 52.00,
@@ -265,7 +265,7 @@ const instrumentData = [
   image_path: '/images/bassDrum.jpg'
 },
 {
-  name: 'Bongo drums',
+  name: 'Bongo Drums',
   origin: 'Cuba',
   classification_id: 7,
   price: 458.00,
@@ -273,16 +273,16 @@ const instrumentData = [
   image_path: '/images/BongoDrums.jpg'
 },
 {
-  name: 'Drum',
-  origin: '',
+  name: 'Drum Set',
+  origin: 'America',
   classification_id: 7,
-  price: 66.00,
-  manufacturer: 'Roland',
-  image_path: ''
+  price: 679.99,
+  manufacturer: 'Yamaha',
+  image_path: '/images/drum.png'
 },
 {
   name: 'Snare drum',
-  origin: '',
+  origin: 'Medieval',
   classification_id: 7,
   price: 98.00,
   manufacturer: 'Forte',
@@ -342,7 +342,7 @@ const instrumentData = [
   classification_id: 9,
   price: 496.00,
   manufacturer: 'Steinway',
-  image_path: '/images/xylophone.jpg'
+  image_path: '/images/xylophone.jpeg'
 },
 ];
 const seedInstruments = () => Instrument.bulkCreate(instrumentData);

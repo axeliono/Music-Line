@@ -8,53 +8,8 @@ const {
 const withAuth = require("../../utils/auth");
 const router = require("express").Router();
 
-//find all shopping_cart_selections that have a user_id associated with the current logged in user
-router.get("/", withAuth, (req, res) => {
-  Shopping_Cart_Selection.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
-    include: {
-      model: Shopping_Cart_Selection,
-      attributes: ["id"],
-      include: [
-        {
-          model: Sale,
-          attributes: ["sum_price"],
-        },
-        {
-          model: Instrument,
-          attributes: ["name", "origin", "manufacturer", "price"],
-          include: {
-            model: Classification,
-            attributes: ["name"],
-          },
-        },
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    },
-  })
-    .then((dbShopData) => {
-      if (!dbShopData) {
-        res
-          .status(404)
-          .json({ message: "no shopping cart found with this id" });
-        return;
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-//we may not need this route since we will always want to pull ALL selections that the user has in the shopping cart and not just one
 router.get("/:id", withAuth, (req, res) => {
   Shopping_Cart_Selection.findOne({
-    //input attributes later if needed
     where: {
       id: req.params.id,
     },

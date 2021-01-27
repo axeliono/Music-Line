@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Instrument, Sale, Shopping_Cart_Selection, Classification } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //returns all user id's, names, and emails...exludes stored passwords
 router.get('/', (req, res) => {
@@ -14,43 +15,17 @@ router.get('/', (req, res) => {
 });
 
 //returns information about a single user, their sale's, instruments, and shopping cart selection information
-router.get('/:id', (req, res) => {
+router.get('/myCart', withAuth, (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
-      id: req.params.id
+      id: req.session.user_id
     },
     include: [
       {
         model: Sale,
         attributes: ['id', 'sum_price']
-      },
-      {
-        model: Instrument,
-        attributes: ['id', 'name', 'origin', 'manufacturer', 'price'],
-        include: {
-            model: Classification,
-            attributes: ['name']
-        }
-      },
-      {
-        model: Shopping_Cart_Selection,
-        attributes: ['id'],
-        include: [
-            {
-                model: Sale,
-                attributes: ['sum_price']                
-            },
-            {
-                model: Instrument,
-                attributes: ['name', 'origin', 'manufacturer', 'price'],
-                include: {
-                    model: Classification,
-                    attributes: ['name']
-                }
-            }
-        ]
-      }  
+      }
     ]
   })
     .then(dbUserData => {
