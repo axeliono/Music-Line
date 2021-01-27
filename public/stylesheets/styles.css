@@ -774,7 +774,8 @@ section {
 }
 
 .select-group label,
-.email-content label {
+.email-content label,
+.name-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 0.85rem;
@@ -784,7 +785,8 @@ section {
     margin-bottom: 1rem;
 }
 
-.select-group select {
+.select-group select,
+.name-group input {
     width: 20rem;
     height: 2rem;
     margin-bottom: 2rem;
