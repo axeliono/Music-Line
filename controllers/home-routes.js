@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Classification, Instrument, User } = require("../models");
+const {
+  Classification,
+  Instrument,
+  User,
+  Shopping_Cart_Selection,
+  Sale,
+} = require("../models");
+const withAuth = require("../utils/auth");
+const state = {
+  userData: "",
+  saleData: "",
+};
 
 router.get("/", (req, res) => {
   Classification.findAll({
@@ -19,27 +30,39 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("login");
-});
-
-router.get("/shopping-cart", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("shopping-cart");
+router.get("/shopping-cart", withAuth, (req, res) => {
+  // if (req.session.loggedIn) {
+  //   res.redirect("/");
+  //   return;
+  // }
+  Shopping_Cart_Selection.findAll({
+    where: {
+      sale_id: req.session.sale,
+    },
+    include: [
+      {
+        model: Instrument,
+        attributes: ["name", "origin", "manufacturer", "price"],
+        include: {
+          model: Classification,
+          attributes: ["name"],
+        },
+      },
+    ],
+  })
+    .then((dbShopData) => {
+      const items = dbShopData.map((item) => item.get({ plain: true }));
+      res.render("shopping-cart", { items });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // render login page when icon clicked in header
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 // render shop all instruments
@@ -144,6 +167,5 @@ router.get("/contact", (req, res) => {
 });
 
 // render shopping cart page when icon is clicked in header
-router.get("/shopping-cart", (req, res) => {});
 
 module.exports = router;

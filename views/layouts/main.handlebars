@@ -18,11 +18,6 @@
                         <img src="/images/MLlogo.png" alt="">
                     </a>
                     <!-- Search bar -->
-                    {{#if loggedIn}}
-                    <button class="btn btn-search" id="btn-logout">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    {{/if}}
                     <div class="search-bar-wrapper">
                         <input type="text" placeholder="Search instruments by keywords" id="search-input">
                         <button class="btn btn-search" id="btn-search">
@@ -119,9 +114,6 @@
     </footer>
 
     <!-- js script -->
-    {{#if loggedIn}}
-    <script src="/javascript/logout"></script>
-    {{/if}}
 </body>
 
 </html>

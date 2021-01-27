@@ -7,6 +7,10 @@ const {
   Classification,
 } = require("../../models");
 const withAuth = require("../../utils/auth");
+const state = {
+  userData: "",
+  saleData: "",
+};
 
 //returns all user id's, names, and emails...exludes stored passwords
 router.get("/", (req, res) => {
@@ -58,6 +62,7 @@ router.post("/", (req, res) => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
+        req.session.email = dbUserData.email;
         req.session.loggedIn = true;
         req.session.sale = null;
 
@@ -88,21 +93,21 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
-
+    state.userData = dbUserData;
     Sale.create({
       sum_price: 0,
-      user_id: dbUserData.id,
+      user_id: state.userData.id,
     })
       .then((dbSaleData) => {
-        console.log(req.session.sale);
+        state.saleData = dbSaleData;
         req.session.save(() => {
-          req.session.user_id = dbSaleData.user_id;
-          req.session.username = dbUserData.username;
-          req.session.sale = dbSaleData.id;
+          req.session.user_id = state.userData.id;
+          req.session.username = state.userData.username;
+          req.session.sale = state.saleData.id;
           req.session.loggedIn = true;
-
-          // res.json({ user: dbUserData, message: "You are now logged in!" });
-          res.render("home-page", { sale, loggedIn });
+          console.log(req.session);
+          console.log(state);
+          res.json({ user: dbUserData, message: "You are now logged in!" });
         });
       })
       .catch((err) => {
