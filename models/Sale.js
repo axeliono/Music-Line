@@ -26,11 +26,6 @@ Sale.init(
               key: 'id'
             }
         },
-        // price of all items in the shopping cart
-        sum_price: {
-            type: DataTypes.DECIMAL,
-            allowNull: false
-        },
     },
     {
       sequelize,
