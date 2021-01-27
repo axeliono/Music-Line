@@ -50,6 +50,46 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 
+router.get("/", withAuth, (req, res) => {
+  Shopping_Cart_Selection.findAll({
+    include: {
+      model: Shopping_Cart_Selection,
+      attributes: ["id"],
+      include: [
+        {
+          model: Sale,
+          attributes: ["sum_price"],
+        },
+        {
+          model: Instrument,
+          attributes: ["name", "origin", "manufacturer", "price"],
+          include: {
+            model: Classification,
+            attributes: ["name"],
+          },
+        },
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    },
+  })
+    .then((dbShopData) => {
+      if (!dbShopData) {
+        res
+          .status(404)
+          .json({ message: "no shopping cart found with this id" });
+        return;
+      }
+      res.json({ dbShopData });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 //Create new Shopping_Cart_Selection
 router.post("/", withAuth, (req, res) => {
   Shopping_Cart_Selection.create({

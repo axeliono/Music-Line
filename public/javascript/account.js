@@ -4,7 +4,10 @@ async function loginHandler(event) {
   //input whatever element will contain the users info.
   const email = document.querySelector("#login-email").value.trim();
   const password = document.querySelector("#login-password").value.trim();
-  if (email === req.session.username) {
+  const sessionData = (await fetch("/api/session")).json();
+  console.log(sessionData);
+
+  if (email === sessionData.email) {
     alert("This user is currently logged in");
     document.location.replace("/");
     return;
@@ -22,9 +25,6 @@ async function loginHandler(event) {
 
     if (response.ok) {
       //put wherever the person will go after logging in
-      const button = document.createElement("button");
-      button.classList.add("toLogout");
-      document.querySelector(".top-header").append(button);
       document.location.replace("/");
     } else {
       alert(response.statusText);
