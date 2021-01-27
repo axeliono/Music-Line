@@ -1,10 +1,9 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection');
-const { Classification, Instrument } = require("../models");
+const { Classification, Instrument, User } = require("../models");
 
 
 router.get("/", (req, res) => {
-  console.log("======================");
   Classification.findAll({
     attributes: ["name"],
   })
@@ -20,56 +19,25 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-<<<<<<< HEAD
-=======
 
-/*
-//we may want to remove this since there is another login route (unsure which one we need or if we need both)
-router.get("/login", (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
 
-  res.render("login");
+  res.render('login');
 });
 
->>>>>>> develop
-//For logging in from homepage
-router.get("/login", (req, res) => {
+router.get('/shopping-cart', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/account");
+    res.redirect('/');
     return;
   }
-  res.render("login");
-});
-router.get("/shop/:category", (req, res) => {
-  Instrument.findAll({
-    where: {
-      category: req.params.category,
-    },
-    attributes: ["id", "name", "origin", "manufacturer", "price"],
-    include: {
-      model: Classification,
-      attributes: ["name"],
-    },
-  })
-    .then((dbInstrumentData) => {
-      const instruments = dbInstrumentData.map((instrument) =>
-        instrument.get({ plain: true })
-      );
-      res.render("shop-category", { instruments });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-<<<<<<< HEAD
-=======
-*/
 
->>>>>>> develop
+  res.render('shopping-cart');
+});
+
 router.get("/shop", (req, res) => {
   Instrument.findAll({
       attributes: ["id", "name", "classification_id", "origin", "manufacturer", "price", "image_path"],
