@@ -72,6 +72,44 @@ router.get("/shop", (req, res) => {
       const instruments = dbInstrumentData.map((instrument) =>
         instrument.get({ plain: true })
       );
+      res.render("shop-category", { instruments });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// render login page when icon clicked in header
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/account");
+    return;
+  }
+  res.render("login");
+});
+
+// render shop all instruments
+router.get("/shop", (req, res) => {
+  Instrument.findAll({
+    attributes: [
+      "id",
+      "name",
+      "classification_id",
+      "origin",
+      "manufacturer",
+      "price",
+      "image_path",
+    ],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
       res.render("shop", { instruments });
     })
     .catch((err) => {
@@ -80,6 +118,7 @@ router.get("/shop", (req, res) => {
     });
 });
 
+// render single instrument based on id
 router.get("/shop/:id", (req, res) => {
   Instrument.findOne({
     where: {
@@ -114,6 +153,7 @@ router.get("/shop/:id", (req, res) => {
     });
 });
 
+// render all instruments by category selected
 router.get("/shop/category/:id", (req, res) => {
   Instrument.findAll({
     where: {
@@ -145,49 +185,12 @@ router.get("/shop/category/:id", (req, res) => {
     });
 });
 
-router.get("/shopping-cart/:id", (req, res) => {
-  Shopping_Cart_Selection.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
-    include: {
-      model: Shopping_Cart_Selection,
-      attributes: ["id"],
-      include: [
-        {
-          model: Sale,
-          attributes: ["sum_price"],
-        },
-        {
-          model: Instrument,
-          attributes: ["name", "origin", "manufacturer", "price"],
-          include: {
-            model: Classification,
-            attributes: ["name"],
-          },
-        },
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    },
-  })
-    .then((dbShopData) => {
-      if (!dbShopData) {
-        res
-          .status(404)
-          .json({ message: "no shopping cart found with this id" });
-        return;
-      }
-      const items = dbShopData.map((cartItems) => {
-        cartItems.get({ plain: true });
-      });
-      res.render("shopping-cart", { items });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+// render contact us section
+router.get("/contact", (req, res) => {
+  res.render("contact");
 });
+
+// render shopping cart page when icon is clicked in header
+router.get("/shopping-cart", (req, res) => {});
+
 module.exports = router;
