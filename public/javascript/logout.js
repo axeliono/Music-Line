@@ -11,10 +11,5 @@ async function logout() {
   }
 }
 
-<<<<<<< HEAD
-
-document.querySelector(".btn-logout").addEventListener("click", logout());
-=======
 //add event listener
 document.querySelector(".toLogout").addEventListener("click", logout);
->>>>>>> develop
