@@ -1,13 +1,8 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const {
-  Classification,
-  Instrument,
-  Shopping_Cart_Selection,
-} = require("../models");
+const { Classification, Instrument, User } = require("../models");
 
 router.get("/", (req, res) => {
-  console.log("======================");
   Classification.findAll({
     attributes: ["name"],
   })
@@ -24,60 +19,22 @@ router.get("/", (req, res) => {
     });
 });
 
-//For logging in from homepage
 router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("login");
 });
 
-// router.get("/shop/:category", (req, res) => {
-//   Instrument.findAll({
-//     where: {
-//       category: req.params.category,
-//     },
-//     attributes: ["id", "name", "origin", "manufacturer", "price"],
-//     include: {
-//       model: Classification,
-//       attributes: ["name"],
-//     },
-//   })
-//     .then((dbInstrumentData) => {
-//       const instruments = dbInstrumentData.map((instrument) =>
-//         instrument.get({ plain: true })
-//       );
-//       res.render("shop-category", { instruments });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.get("/shopping-cart", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
-router.get("/shop", (req, res) => {
-  Instrument.findAll({
-    attributes: [
-      "id",
-      "name",
-      "classification_id",
-      "origin",
-      "manufacturer",
-      "price",
-      "image_path",
-    ],
-    include: {
-      model: Classification,
-      attributes: ["name"],
-    },
-  })
-    .then((dbInstrumentData) => {
-      const instruments = dbInstrumentData.map((instrument) =>
-        instrument.get({ plain: true })
-      );
-      res.render("shop-category", { instruments });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  res.render("shopping-cart");
 });
 
 // render login page when icon clicked in header

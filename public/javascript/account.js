@@ -57,23 +57,10 @@ async function signupHandler(event) {
     }
   }
 }
-
-async function initiateSale() {
-  const sessionSale = await fetch("/api/sale/", {
-    method: "post",
-    body: JSON.stringify({
-      sum_price: 0,
-      user_id: req.session.user_id,
-    }),
-    headers: { "Content-Type": "application/json" },
-  });
-  if (sessionSale.ok) {
-    document.location.replace("/");
-  } else {
-    alert(response.statusText);
-  }
-}
-
+document.querySelector(".login-form").addEventListener("submit", loginHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupHandler);
 //add the event listeners that will call these functions
 document
   .querySelector("#signup-form")

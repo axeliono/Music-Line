@@ -8,7 +8,10 @@
             <div class="content-wrapper">
                 <div class="single-description">
                     <div class="single-name">{{instrument.name}}</div>
-                    <div class="single-price">${{instrument.price}}</div>
+                        <div>
+                            <span class="single-text">$</span>
+                            <span class="single-price">{{instrument.price}}</span>
+                        </div>
                 </div>
                 <div class="single-text">
                     <p>Category: <span class="category">{{instrument.classification.name}}</span></p>
@@ -23,3 +26,4 @@
         </div>
     </div>
 </section>
+<script src="/javascript/add-instrument.js"></script>
