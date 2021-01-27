@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 const { Classification, Instrument, User } = require("../models");
-
 
 router.get("/", (req, res) => {
   Classification.findAll({
@@ -20,43 +19,46 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
-
-router.get('/shopping-cart', (req, res) => {
+router.get("/shopping-cart", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('shopping-cart');
+  res.render("shopping-cart");
 });
 
 // render login page when icon clicked in header
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/account");
-    return;
-  }
   res.render("login");
 });
 
-// render shop all instruments 
+// render shop all instruments
 router.get("/shop", (req, res) => {
   Instrument.findAll({
-      attributes: ["id", "name", "classification_id", "origin", "manufacturer", "price", "image_path"],
-      include: {
-        model: Classification,
-        attributes: ["name"],
-      }
-    })
+    attributes: [
+      "id",
+      "name",
+      "classification_id",
+      "origin",
+      "manufacturer",
+      "price",
+      "image_path",
+    ],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
     .then((dbInstrumentData) => {
       const instruments = dbInstrumentData.map((instrument) =>
         instrument.get({ plain: true })
@@ -70,64 +72,78 @@ router.get("/shop", (req, res) => {
 });
 
 // render single instrument based on id
-router.get('/shop/:id', (req, res) => {
+router.get("/shop/:id", (req, res) => {
   Instrument.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: ["id", "name", "classification_id", "origin", "manufacturer", "price", "image_path"],
+    attributes: [
+      "id",
+      "name",
+      "classification_id",
+      "origin",
+      "manufacturer",
+      "price",
+      "image_path",
+    ],
     include: {
       model: Classification,
       attributes: ["name"],
-    }
+    },
   })
-  .then(dbInstrumentData => {
-    if (!dbInstrumentData) {
-      res.status(404).json({ message: 'No instrument found with this id' });
-      return;
-    }
+    .then((dbInstrumentData) => {
+      if (!dbInstrumentData) {
+        res.status(404).json({ message: "No instrument found with this id" });
+        return;
+      }
 
-    const instrument = dbInstrumentData.get({ plain: true });
-    res.render('single-instrument', { instrument });
-  }) 
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+      const instrument = dbInstrumentData.get({ plain: true });
+      res.render("single-instrument", { instrument });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-// render all instruments by category selected 
-router.get('/shop/category/:id', (req, res) => {
+// render all instruments by category selected
+router.get("/shop/category/:id", (req, res) => {
   Instrument.findAll({
     where: {
-      classification_id: req.params.id
+      classification_id: req.params.id,
     },
-    attributes: ["id", "name", "classification_id", "origin", "manufacturer", "price", "image_path"],
+    attributes: [
+      "id",
+      "name",
+      "classification_id",
+      "origin",
+      "manufacturer",
+      "price",
+      "image_path",
+    ],
     include: {
       model: Classification,
       attributes: ["name"],
-    }
+    },
   })
-  .then(dbInstrumentData => {
-    const instruments = dbInstrumentData.map((instrument) =>
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
         instrument.get({ plain: true })
       );
       res.render("shop-category", { instruments });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-// render contact us section 
-router.get('/contact', (req, res) => {
-  res.render('contact');
+// render contact us section
+router.get("/contact", (req, res) => {
+  res.render("contact");
 });
 
 // render shopping cart page when icon is clicked in header
-router.get('/shopping-cart', (req, res) => {
-  
-})
+router.get("/shopping-cart", (req, res) => {});
 
 module.exports = router;
