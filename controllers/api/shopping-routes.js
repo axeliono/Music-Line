@@ -8,41 +8,44 @@ const {
 const withAuth = require("../../utils/auth");
 const router = require("express").Router();
 
-router.get("/:id", withAuth, (req, res) => {
-  Shopping_Cart_Selection.findOne({
-    where: {
-      id: req.params.id,
-    },
+router.get("/", (req, res) => {
+  Shopping_Cart_Selection.findAll({
+    attributes: ["id"],
     include: {
-      model: Shopping_Cart_Selection,
-      attributes: ["id"],
-      include: [
-        {
-          model: Sale,
-          attributes: ["sum_price"],
+      model: Instrument,
+      attributes: ["id", "name", "origin", "manufacturer", "price"],
+        include: {
+          model: Classification,
+          attributes: ["name"],
         },
-        {
-          model: Instrument,
-          attributes: ["name", "origin", "manufacturer", "price"],
+    }
+  })
+    .then((dbSaleData) => {
+      res.json(dbSaleData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/myCart", (req, res) => {
+  Shopping_Cart_Selection.findAll({
+    where: {
+      sale_id: req.session.saleId,
+    },
+    attributes: ["id"],
+    include: {
+        model: Instrument,
+        attributes: ["id", "name", "origin", "manufacturer", "price"],
           include: {
             model: Classification,
             attributes: ["name"],
           },
-        },
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    },
-  })
-    .then((dbShopData) => {
-      if (!dbShopData) {
-        res
-          .status(404)
-          .json({ message: "no shopping cart found with this id" });
-        return;
       }
+    })
+    .then((dbSaleData) => {
+      res.json(dbSaleData);
     })
     .catch((err) => {
       console.log(err);
@@ -51,9 +54,9 @@ router.get("/:id", withAuth, (req, res) => {
 });
 
 //Create new Shopping_Cart_Selection
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   Shopping_Cart_Selection.create({
-    sale_id: req.body.sale_id,
+    sale_id: req.session.saleId,
     instrument_id: req.body.instrument_id,
   })
     .then((dbShopData) => {

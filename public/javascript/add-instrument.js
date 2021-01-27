@@ -14,6 +14,29 @@ function getCookie(cname) {
   return "";
 }
 
+async function getNewestSale(){
+  const response = await fetch("/api/sale", {
+    method: "GET", 
+    })
+    return response;
+}
+
+async function addToCart(){
+  const instrument = document.querySelector('.single-name').innerText;
+
+  const response = await fetch("/api/shopping", {
+    method: "post",
+    body: JSON.stringify({
+      instrument,
+    })
+  });
+  if (response.ok) { 
+    document.location.replace('/shopping-cart'); 
+  } else {
+    alert(response.statusText);
+  }
+}
+
 async function newInstrumentSale(event) {
   event.preventDefault();
   
@@ -32,29 +55,20 @@ async function newInstrumentSale(event) {
     },
   });
   if (response.ok) {
+    console.log(response);
     document.cookie = "hasCart=1"
-    //create alert if they want to continue shopping or move to checkout
+    var x = getNewestSale();
+    console.log(x);
+    addToCart();
   } else {
     alert(response.statusText);
   }
   }
   
   if(hasCart=1){
-    console.log('already has cart')
-    // const response = await fetch('/api/users/myCart',{
-    //   method: "get",
-    //   headers: {
-    //   "Content-Type": "application/json",
-    //   },
-    // });
-    // if (response.ok) {
-    //   console.log(JSON.stringify(response));
-    // } else {
-    //   alert(response.statusText);
-    }
+    console.log('already has cart');
+    addToCart();
   }
 }
 
-
 document.querySelector('.add-to-cart-btn').addEventListener('click', newInstrumentSale);
-//add event listener here;
