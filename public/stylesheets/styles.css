@@ -1,0 +1,874 @@
+/* Global & reusable styles */
+* {
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    font-size: 10px;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.m-right {
+    margin-right: 12px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 9.5rem 0;
+}
+
+/* Header styles */
+.header-wrapper {
+    background-color: #000;
+    color: #fff;
+}
+
+.header-wrapper header {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-header {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.search-bar-wrapper {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar-wrapper input {
+    width: 100%;
+    height: 2.2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: #000;
+    padding: 0.75rem;
+}
+
+.search-bar-wrapper button {
+    width: 2.5rem;
+    border: none;
+    outline: none;
+    background-color: orange;
+}
+
+.icon-group {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon-group p{
+    margin-top: 5px;
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.nav-icon i {
+    font-size: 1.2rem;
+}
+
+.bottom-header {
+    border-top: 1px solid #292929;
+    padding-bottom: 12px;
+}
+
+.nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: orange;
+}
+
+/* Shop all instruments styling */
+.section-name {
+    color: #000;
+    font-size: 3rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+}
+.grid-wrapper {
+    height: 100%;
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    height: 350px;
+    padding: 1.2rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.5s ease-in-out, border 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: none;
+    border: 2px solid #000;
+}
+
+.card img {
+    width: 100%;
+    height: 60%;
+}
+
+.card-details {
+    padding-top: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.instrument-name {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.instrument-description {
+    font-size: 1.2rem;
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.instrument-price {
+    align-self: flex-end;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.instrument-price i {
+    margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 900px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+.classification-name {
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Single Instrument view */
+.single-instrument {
+    display: flex;
+    color: #000;
+}
+
+.image-wrapper {
+    width: 50%;
+    height: 450px;
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+.content-wrapper {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #000;
+    padding-left: 3rem;
+}
+
+.single-name {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.single-price {
+    margin-top: 0.7rem;
+    font-size: 2rem;
+}
+
+.single-text p {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin: 8px;
+}
+
+.single-text span {
+    color: #bdbdbd;
+    font-weight: 600;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+}
+
+.add-to-cart-btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.add-to-cart-btn i {
+    margin-right: 8px;
+}
+
+@media screen and (min-width: 1020px) {
+    .content-wrapper {
+        height: 550px;
+        padding: 1rem 1rem 1rem 4.5rem;
+    }
+    .single-name {
+        font-size: 3.3rem;
+    }
+    .single-price {
+        font-size: 2.3rem;
+    }
+    .single-text p {
+        font-size: 1.4rem;
+    }
+    .add-to-cart-btn {
+        margin-top: 1.3rem;
+    }
+}
+
+/* Login/Signup page */
+.forms-wrapper {
+    color: #000;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login-side,
+.signup-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.line {
+    width: 1px;
+    height: 400px;
+    margin-top: 5rem;
+    background-color: #000;
+}
+
+.login-text,
+.signup-text {
+    font-size: 2rem;
+}
+
+.login-text span,
+.signup-text span {
+    display: block;
+    font-size: 1rem;
+    color: #bdbdbd;
+}
+
+.login-form,
+.signup-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-form {
+    margin-top: 2.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+}
+
+.input-group input {
+    width: 15rem;
+    height: 1.8rem;
+    margin-bottom: 2rem;
+    outline: none;
+    border: 1px solid #bdbdbd;
+    padding: 0 5px;
+}
+
+.login-btn {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1020px) {
+    .login-text,
+    .signup-text {
+        font-size: 3rem;
+    }
+    .login-text span,
+    .signup-text span {
+        font-size: 1.4rem;
+    }
+    .login-form,
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .input-group label {
+        font-size: 0.85rem;
+    }
+    .input-group input {
+        width: 18rem;
+        height: 2.1rem;
+        margin-bottom: 2rem;
+    }
+    .login-btn {
+    font-size: 0.85rem;
+    }
+}
+
+/* Footer styles */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.main-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.copyright {
+    font-size: 1.5rem;
+}
+
+.contributing {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-text {
+    align-self: center;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.group-names {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.member-name {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.member-name a {
+    font-size: 1.2rem;
+    margin-left: 4px;
+    transition: color 0.3s ease-in;
+}
+
+.member-name a:hover {
+    color: orange;
+}
+
+
+.dropdown {
+    overflow: hidden;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.85rem;
+    display: block;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+
+.dropdown-content a:hover {
+    color: orange;
+}
+
+.dropdown-content a:hover:not(:last-child) {
+    border-bottom: 1px solid orange;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* YUNIK SHOPPING CART STYLES */
+.shopping-cart-page{
+    width: 80%;
+    height: 60vh;
+    margin: 50px auto;
+}
+
+.shopping-cart-page h1{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.adding-cart{
+    width: 85%;
+    margin: 50px auto 0 auto;
+}
+
+.cart-list{
+    display: flex;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-list:hover{
+    transform: scale(1.1);
+}
+
+.item-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.item-img img{
+    width: 100px;
+    height: 100px;
+}
+
+.item-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.item-group {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-text {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #cdcdcd;
+}
+
+.quantity,
+.price,
+.total {
+    font-size: 0.85rem;
+}
+
+.remove i {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.remove i:hover{
+    color: red;
+}
+
+.summary{
+    width: 65%;
+    height: 40vh;
+    margin: 50px auto 0 auto;
+    padding: 20px 30px;
+    background-color: #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sum-header{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.summary-wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-contents {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.summary-contents p {
+    font-size: 1rem;
+}
+
+.summary-total,
+.summary-tax,
+.summary-subtotal {
+    font-size: 1rem;
+}
+
+.sales-tax {
+    border-bottom: 1px dotted #000;
+}
+
+.subtotal p,
+.summary-subtotal {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.checkout{
+    width: 50%;
+    display: flex;
+    margin: 1rem auto 0 auto;
+    
+}
+
+.checkout button{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.checkout button i {
+    font-size: 1.8rem;
+}
+
+.checkout button:hover{
+    background-color: orange;
+}
+
+
+/* YUNI HERO STYLES */
+.hero {
+    margin-top: 5rem;
+}
+
+.img-slider{
+    overflow: hidden;
+}
+
+.img-slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 25s slider infinite;
+}
+
+.img-slider figure img{
+    width: 20%;
+    float: left;
+    height: 50vh;
+    object-fit: cover;
+}
+
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+.hero-title {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 1px;
+}
+
+.hero-title span {
+    display: block;
+    font-size: 1.75rem;
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.hero-content {
+    height: 100%;
+    margin-top: 3.5rem;
+    margin-bottom: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* About & Contact page- About section*/
+
+.contact-about{
+    width: 80%; 
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.about{
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 200px;
+}
+
+.about h1{
+    font-size: 3rem;
+}
+
+.about p{
+    font-size: 1rem;
+}
+
+.contact-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="username"],
+  #contact input[type="url"],
+  #contact textarea,
+  #contact button[type="submit"] {
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+  }
+  
+  #contact {
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 150px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  #contact h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    /* text-align: center;
+    padding-top: -10px; */
+  }
+  
+  #contact h4 {
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="username"],
+  #contact input[type="url"],
+  #contact textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+  }
+  
+  #contact input[type="text"]:hover,
+  #contact input[type="email"]:hover,
+  #contact input[type="username"]:hover,
+  #contact input[type="url"]:hover,
+  #contact textarea:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #aaa;
+  }
+  
+  #contact textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+  }
+  
+  #contact button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #FFA500;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  #contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  #contact input:focus,
+  #contact textarea:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  }

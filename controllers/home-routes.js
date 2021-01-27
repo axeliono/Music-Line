@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Classification } = require("../models");
+const { Classification, Instrument } = require("../models");
 
 router.get("/", (req, res) => {
   console.log("======================");
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
         classif.get({ plain: true })
       );
 
-      res.render("main", classes);
+      res.render("home-page", classes);
     })
     .catch((err) => {
       console.log(err);
@@ -29,16 +29,6 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//we may not need this if we want people to be able sign up even if someone is logged in
-router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("signup");
-});
-
 //For logging in from homepage
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -47,4 +37,67 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
-module.express = router;
+
+router.get("/shop/:category", (req, res) => {
+  Instrument.findAll({
+    where: {
+      category: req.params.category,
+    },
+    attributes: ["id", "name", "origin", "manufacturer", "price"],
+    include: {
+      model: Classification,
+      attributes: ["name"],
+    },
+  })
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop-category", { instruments });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/shop", (req, res) => {
+  instruments
+    .findAll({
+      attributes: ["id", "name", "origin", "manufacturer", "price"],
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    })
+    .then((dbInstrumentData) => {
+      const instruments = dbInstrumentData.map((instrument) =>
+        instrument.get({ plain: true })
+      );
+      res.render("shop", { instruments });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/contact", (req, res) => {
+  console.log("======================");
+  Classification.findAll({
+    attributes: ["name"],
+  })
+    .then((dbClassData) => {
+      const classes = dbClassData.map((classif) =>
+        classif.get({ plain: true })
+      );
+
+      res.render("contact", classes);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+module.exports = router;
