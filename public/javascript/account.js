@@ -1,9 +1,14 @@
 async function loginHandler(event) {
   event.preventDefault();
-
+  console.log("clicked");
   //input whatever element will contain the users info.
   const email = document.querySelector("#login-email").value.trim();
   const password = document.querySelector("#login-password").value.trim();
+  if (email === req.session.username) {
+    alert("This user is currently logged in");
+    document.location.replace("/");
+    return;
+  }
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -17,6 +22,7 @@ async function loginHandler(event) {
 
     if (response.ok) {
       //put wherever the person will go after logging in
+      initiateSale();
       document.location.replace("/");
     } else {
       alert(response.statusText);
@@ -44,6 +50,7 @@ async function signupHandler(event) {
 
     if (response.ok) {
       //wherever the user will go after creating an account
+      initiateSale();
       document.location.replace("/");
     } else {
       alert(response.statusText);
@@ -51,4 +58,24 @@ async function signupHandler(event) {
   }
 }
 
+async function initiateSale() {
+  const sessionSale = await fetch("/api/sale/", {
+    method: "post",
+    body: JSON.stringify({
+      sum_price: 0,
+      user_id: req.session.user_id,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (sessionSale.ok) {
+    document.location.replace("/");
+  } else {
+    alert(response.statusText);
+  }
+}
+
 //add the event listeners that will call these functions
+document
+  .querySelector("#signup-form")
+  .addEventListener("submit", signupHandler);
+document.querySelector("#login-form").addEventListener("submit", loginHandler);

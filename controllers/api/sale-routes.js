@@ -63,6 +63,8 @@ router.post("/", withAuth, (req, res) => {
     user_id: req.body.user_id,
   })
     .then((dbSaleData) => {
+      req.session.sale = dbSaleData.id;
+      console.log(req.session.sale);
       res.json(dbSaleData);
     })
     .catch((err) => {

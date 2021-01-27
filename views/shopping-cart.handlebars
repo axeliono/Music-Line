@@ -4,22 +4,22 @@
         <div class="adding-cart">
     
             <!-- First item -->
-             {{#each}} item in their cart 
+             {{#each items as |item|}}
             <div class="cart-list">
                 <div class="item-list">
                     <div class="item-img" id="item-img">
                         <img src="images2/accordian.jpg" alt="">
                     </div>
                     <div class="item-name" id="item-name">
-                        Accordian
+                        {{item.name}}
                     </div>
                     <div class="item-group">
                         <div class="item-text">Qty</div>
-                        <div class="quantity" id="quantity">2</div>
+                        <div class="quantity" id="quantity">1</div>
                     </div>
                     <div class="item-group">
                         <div class="item-text">Price</div>
-                        <div class="price" id="price">$100.00</div>
+                        <div class="price" id="price">{{item.price}}</div>
                     </div>
                     <div class="item-group">
                         <div class="item-text">Total</div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end of each {{ /#each }} -->
+                {{/each}}
 
             <!-- Summary of Cart -->       
             <div class="summary">
