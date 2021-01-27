@@ -89,13 +89,26 @@ router.post("/login", (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
+    Sale.create({
+      sum_price: 0,
+      user_id: dbUserData.id,
+    })
+      .then((dbSaleData) => {
+        console.log(req.session.sale);
+        req.session.save(() => {
+          req.session.user_id = dbSaleData.user_id;
+          req.session.username = dbUserData.username;
+          req.session.sale = dbSaleData.id;
+          req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: "You are now logged in!" });
-    });
+          // res.json({ user: dbUserData, message: "You are now logged in!" });
+          res.render("home-page", { sale, loggedIn });
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json(err);
+      });
   });
 });
 

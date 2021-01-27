@@ -39,10 +39,6 @@ router.get("/shopping-cart", (req, res) => {
 
 // render login page when icon clicked in header
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/account");
-    return;
-  }
   res.render("login");
 });
 

@@ -22,7 +22,9 @@ async function loginHandler(event) {
 
     if (response.ok) {
       //put wherever the person will go after logging in
-      initiateSale();
+      const button = document.createElement("button");
+      button.classList.add("toLogout");
+      document.querySelector(".top-header").append(button);
       document.location.replace("/");
     } else {
       alert(response.statusText);
@@ -50,13 +52,13 @@ async function signupHandler(event) {
 
     if (response.ok) {
       //wherever the user will go after creating an account
-      initiateSale();
       document.location.replace("/");
     } else {
       alert(response.statusText);
     }
   }
 }
+
 document.querySelector(".login-form").addEventListener("submit", loginHandler);
 document
   .querySelector(".signup-form")
