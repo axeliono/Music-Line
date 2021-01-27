@@ -1,9 +1,17 @@
 async function loginHandler(event) {
   event.preventDefault();
-
+  console.log("clicked");
   //input whatever element will contain the users info.
   const email = document.querySelector("#login-email").value.trim();
   const password = document.querySelector("#login-password").value.trim();
+  const sessionData = (await fetch("/api/session")).json();
+  console.log(sessionData);
+
+  if (email === sessionData.email) {
+    alert("This user is currently logged in");
+    document.location.replace("/");
+    return;
+  }
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -50,6 +58,13 @@ async function signupHandler(event) {
     }
   }
 }
-document.querySelector('.login-form').addEventListener('submit', loginHandler);
-document.querySelector('.signup-form').addEventListener('submit', signupHandler);
+
+document.querySelector(".login-form").addEventListener("submit", loginHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupHandler);
 //add the event listeners that will call these functions
+document
+  .querySelector("#signup-form")
+  .addEventListener("submit", signupHandler);
+document.querySelector("#login-form").addEventListener("submit", loginHandler);

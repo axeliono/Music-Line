@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -37,24 +38,32 @@ async function addToCart(){
   }
 }
 
+=======
+>>>>>>> develop
 async function newInstrumentSale(event) {
   event.preventDefault();
-  
-  const price = document.querySelector('.single-price').innerText;
-  
-  var hasCart = getCookie("hasCart");
 
-  if(hasCart != 1){
-  const response = await fetch("/api/sale", {
+  const instrument_id = document
+    .querySelector(".add-to-cart-btn")
+    .getAttribute("instrument");
+  console.log(instrument_id);
+
+  const saleInfo = await (await fetch("/api/session")).json();
+  console.log(saleInfo);
+  const sale_id = saleInfo.sale;
+  console.log(sale_id);
+  const response = await fetch("/api/shopping", {
     method: "post",
     body: JSON.stringify({
-      price,
+      sale_id,
+      instrument_id,
     }),
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (response.ok) {
+<<<<<<< HEAD
     console.log(response);
     document.cookie = "hasCart=1"
     var x = getNewestSale();
@@ -72,3 +81,16 @@ async function newInstrumentSale(event) {
 }
 
 document.querySelector('.add-to-cart-btn').addEventListener('click', newInstrumentSale);
+=======
+    alert("successfully added to cart");
+    //create alert if they want to continue shopping or move to checkout
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document
+  .querySelector(".add-to-cart-btn")
+  .addEventListener("click", newInstrumentSale);
+//add event listener here;
+>>>>>>> develop

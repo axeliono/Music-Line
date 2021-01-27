@@ -6,9 +6,12 @@ const router = require("express").Router();
 router.get("/", (req, res) => {
   Sale.findAll({
     attributes: ["id", "sum_price", "created_at"],
+<<<<<<< HEAD
     plain: true,
     limit: 1,
     order: [['id', 'DESC']]
+=======
+>>>>>>> develop
   })
     .then((dbSaleData) => {
       res.json(dbSaleData);
@@ -24,7 +27,7 @@ router.get("/:id", withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "sum_price", "created_at"]
+    attributes: ["id", "sum_price", "created_at"],
   })
     .then((dbSaleData) => {
       if (!dbSaleData) {
@@ -42,11 +45,16 @@ router.get("/:id", withAuth, (req, res) => {
 router.post("/", withAuth, (req, res) => {
   Sale.create({
     sum_price: req.body.price,
-    user_id: req.session.user_id
+    user_id: req.session.user_id,
   })
     .then((dbSaleData) => {
+<<<<<<< HEAD
       console.log(dbSaleData.id)
       res.json(dbSaleData.id);
+=======
+      console.log(req.session.sale);
+      res.json(dbSaleData);
+>>>>>>> develop
     })
     .catch((err) => {
       console.log(err);

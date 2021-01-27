@@ -31,10 +31,33 @@
             </div> 
 =======
             <!-- First item -->
-            {{#each}}  
-            
-            {{/each}}
-            <!-- end of each {{ /#each }} -->
+             {{#each items as |item|}}
+            <div class="cart-list">
+                <div class="item-list">
+                    <div class="item-img" id="item-img">
+                        <img src="images2/accordian.jpg" alt="">
+                    </div>
+                    <div class="item-name" id="item-name">
+                        {{item.name}}
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Qty</div>
+                        <div class="quantity" id="quantity">1</div>
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Price</div>
+                        <div class="price" id="price">{{item.price}}</div>
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Total</div>
+                        <div class="total" id="total">$200.00</div>
+                    </div>
+                    <div class="remove" id="remove-cart">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+                {{/each}}
 
             <!-- Summary of Cart -->       
 >>>>>>> 8f474b2f7b87bed5f036b9e4ae9913eea96f1e37
