@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Line</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-page.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="final-page.css">
+</head>
+
+<body id="home">
+    <!-- {{#each}} -->
+    <nav class="nav-bar">
+        <!-- Logo, search bar, search-button, & cart drop-down menu -->
+        <div class="top-nav">
+            <div class="logo"> 
+                <a href="#home">
+                    <H1>Music Line</H1>
+                </a>
+            </div>
+            <!-- Search input with button -->
+            <div class="search-bar">
+                <input placeholder="Enter keywoards, item # or catalog #" id="type-search"></form>
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- <div class="account">
+                <a href=""><i class="fas fa-user"></i>Account<span>Sign In</span></a>
+            </div> -->
+            <div class="account-cart">
+                <div class="account">
+                    <a href=""><i class="fas fa-user"></i>Account</a>
+                </div>
+                <div class="cart">
+                    <a href=""><i class="fas fa-shopping-cart"></i>Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-area">
+            
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a>
+                    <ul> 
+                        <li><a href="#">String Instruments</a></li>
+                        <li><a href="#">Woodwind Instruments</a></li>
+                        <li><a href="#">Piano</a></li>
+                        <li><a href="#">Percussion</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <fieldset>
+            <h3>Your Orders</h3>
+            <div class="col-topic">
+                <h4>Purchased Date</h4>
+                <h4>Item</h4>
+                <h4>Total</h4>
+                <h4>Options</h4>
+            </div>
+            <!-- first item purchased -->
+            <div class="item-detail" id="item-detail">
+                <h4>01/24/2021</h4>
+                <h4>Accordian</h4>
+                <h4>$1000</h4>
+                <div class="options">
+                    <button class="go-page" type="submit">View page</button>
+                    <button class="buy-again" type="submit">Buy it again</button>
+                </div>
+            </div>
+
+            <!-- second item purchased -->
+            <div class="item-detail" id="item-detail">
+                <h4>01/24/2021</h4>
+                <h4>Accordian</h4>
+                <h4>$1000</h4>
+                <div class="options">
+                    <button class="go-page" type="submit">View page</button>
+                    <button class="buy-again" type="submit">Buy it again</button>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+
+    <!-- <footer>
+        <div class="contribution">
+            <h2>
+                Contributed By
+            </h2>
+            <ul>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    
+                    <h3>Lewis, Michael</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Sung, Yunik</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Stafford, Tatum</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Green, Chandler</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Culbert, Lewis</h3>
+
+                </li>
+                <li>
+                    <div class="sns-icon">
+                        <a target="_blank" href="https://www.linkedin.com/in/yun-ik-sung-0a02a326/" class="icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/yuniksung" class="icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Acuna, Daniela</h3>
+
+                </li>
+            </ul>
+        </div>
+    </footer> -->
+    <script src="script.js"></script>
+</body>
+
+</html>

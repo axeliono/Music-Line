@@ -17,4 +17,20 @@ async function deleteItemHandler (event) {
     }
 }
 
+window.addEventListener('load', (event) => {
+    let sum = 0;
+    let subtotal = 0;
+       let prices = document.querySelectorAll('.price');
+       for(i=0; i<prices.length; i++) {
+       sum += (parseInt(prices[i].innerText));
+       }
+    subtotal = ((sum * 1.0825))/100 + sum;
+    let subDollar = subtotal.toFixed(2);
+    let total = document.querySelector('.summary-total');
+    let subt = document.querySelector('.summary-subtotal');
+
+    total.innerHTML = '$ ' + sum;
+    subt.innerHTML = '$ ' + subDollar;
+});
+
 document.querySelector('.remove').addEventListener('click', deleteItemHandler);

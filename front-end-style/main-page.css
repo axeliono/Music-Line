@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #ECF0F1;
+}
+
+
+/* top navigation section
+--Inclde: search-bar with the button
+--Include: cart dropdown-menu */
+.top-nav{
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    padding: 0 10%;
+    display: flex;
+    background-color: rgb(219, 219, 219);
+}
+/* logo */
+.logo{
+    width: 15%;
+    background-color:  rgb(219, 219, 219); /* To display boundaries */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.logo a h1{
+    color: rgb(163, 0, 0);
+    font-size: 50px;
+    font-family: "dancing script";
+    text-align: center;
+    transition: all 0.35s;
+}
+
+.logo a h1:hover{
+    color: rgb(219, 58, 58);
+}
+
+/* search bar and button styling */
+.search-bar{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color:  rgb(219, 219, 219); /* To display boundaries */
+}
+
+.search-bar input{
+    width: 80%;
+    padding: 5px;
+    height: 90%;
+    border: none;
+}
+
+.search-btn{
+    width: 5%;
+    height: 90%;
+    border: none;
+}
+
+.search-btn i{
+    font-size: 25px;
+    color:  rgb(163, 0, 0);
+    transition: all 0.35s;
+
+}
+
+.search-btn i:hover{
+    color:  rgb(219, 58, 58);
+}
+
+/* sign-up and cart drop down menu */
+.account-cart{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color:  rgb(219, 219, 219);; /* To display boundaries */
+}
+.account {
+    margin: auto 10px;
+}
+
+.cart {
+    margin: auto 10px;
+}
+
+.account a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+    transition:  0.35s;
+}
+
+.account a:hover{
+    color: rgb(107, 107, 107);
+}
+
+.account i{
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+.cart a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color:  rgb(78, 78, 78);
+    transition:  0.35s;
+}
+
+.cart a:hover{
+    color: rgb(107, 107, 107);
+}
+
+.cart i{
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+/* header img slider */
+.hero {
+    width: 80%;
+    margin: 50px auto;
+}
+.img-slider{
+    overflow: hidden;
+}
+
+.img-slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 25s slider infinite;
+}
+
+.img-slider figure img{
+    width: 20%;
+    float: left;
+    height: 50vh;
+}
+
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+
+}
+
+  /* MAIN SECTION WHERE ALL INSTRUMENTS CAN BE FOUND */
+  main{
+      width: 80%;
+      margin: 40px auto;
+  }
+  
+  .main-header{
+      width: 100%;
+      height: 20%;
+  }
+
+  .main-header h1{
+    color:rgb(163, 0, 0);
+    text-align: center;
+}
+
+  .inst-select{
+      margin: 20px auto;
+  }
+
+
+/* footer */
+footer{
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+    background-color: rgb(78, 78, 78);
+    bottom: 0;
+    position: absolute;
+}
+
+.contribution {
+    width: 80%;
+    margin: auto;
+}
+
+.contribution h2{
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    color:rgb(36, 36, 36);
+}
+
+.contribution ul {
+    margin: auto;
+    display: flex;
+}
+
+.contribution ul h2{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contribution ul li {
+    list-style: none;
+    width: 20%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contribution ul li h3{
+    color: rgb(201, 201, 201);
+    letter-spacing: 1px;
+}
+
+.sns-icon{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.sns-icon a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    margin: 15px;
+    color: rgb(133, 133, 133);
+    transition: all 0.35s;
+}
+
+.sns-icon a:hover{
+    color: rgb(184, 184, 184);
+}
+

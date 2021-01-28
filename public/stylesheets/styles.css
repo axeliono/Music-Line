@@ -184,7 +184,7 @@ section {
 }
 
 .instrument-name {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -270,6 +270,7 @@ section {
 }
 
 .single-text span {
+    font-size: 1.1rem;
     color: #bdbdbd;
     font-weight: 600;
 }
@@ -693,7 +694,6 @@ section {
     width: 20%;
     float: left;
     height: 50vh;
-    object-fit: cover;
 }
 
 @keyframes slider {
