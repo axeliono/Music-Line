@@ -5,8 +5,7 @@ async function displayShoppingCart(event) {
       method: "GET" 
     });
     if (response.ok) {
-        document.location.replace('/shopping-cart');
-        console.log("got cart")
+      document.location.replace('/shopping-cart');
     } else {
         document.location.replace('/');
       alert(response.statusText);
