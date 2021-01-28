@@ -18,6 +18,12 @@
                     </div>
                     <button class="btn login-btn" id="login-btn">Log In</button>
                 </form>
+                {{#if loggedIn}}
+                <button class="nav-icon toLogout">
+                    <i class="fas fa-user"></i>
+                    Logout
+                </button>
+                {{/if}}
             </div>
             <div class="line"></div>
             <div class="signup-side">
@@ -45,3 +51,6 @@
     </div>
 </section>
 <script src="/javascript/account.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

@@ -1,60 +1,34 @@
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
 async function newInstrumentSale(event) {
   event.preventDefault();
-  
-  const price = document.querySelector('.single-price').innerText;
-  
-  var hasCart = getCookie("hasCart");
 
-  if(hasCart != 1){
-  const response = await fetch("/api/sale", {
+  const instrument_id = document
+    .querySelector(".add-to-cart-btn")
+    .getAttribute("instrument");
+  console.log(instrument_id);
+
+  const saleInfo = await (await fetch("/api/session")).json();
+  console.log(saleInfo);
+  const sale_id = saleInfo.sale;
+  console.log(sale_id);
+  const response = await fetch("/api/shopping", {
     method: "post",
     body: JSON.stringify({
-      price,
+      sale_id,
+      instrument_id,
     }),
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (response.ok) {
-    document.cookie = "hasCart=1"
+    alert("successfully added to cart");
     //create alert if they want to continue shopping or move to checkout
   } else {
     alert(response.statusText);
   }
-  }
-  
-  if(hasCart=1){
-    console.log('already has cart')
-    // const response = await fetch('/api/users/myCart',{
-    //   method: "get",
-    //   headers: {
-    //   "Content-Type": "application/json",
-    //   },
-    // });
-    // if (response.ok) {
-    //   console.log(JSON.stringify(response));
-    // } else {
-    //   alert(response.statusText);
-    }
-  }
 }
 
-
-document.querySelector('.add-to-cart-btn').addEventListener('click', newInstrumentSale);
+document
+  .querySelector(".add-to-cart-btn")
+  .addEventListener("click", newInstrumentSale);
 //add event listener here;

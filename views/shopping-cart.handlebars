@@ -4,10 +4,29 @@
         <div class="adding-cart">
     
             <!-- First item -->
-            {{#each}}  
-            
+             {{#each items as |item|}}
+            <div class="cart-list">
+                <div class="item-list">
+                    <div class="item-img" id="item-img">
+                        <img src="/images/{{item.instrument.name}}.jpg" alt="">
+                    </div>
+                    <div class="item-name" id="item-name">
+                        {{item.instrument.name}}
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Qty</div>
+                        <div class="quantity" id="quantity">1</div>
+                    </div>
+                    <div class="item-group">
+                        <div class="item-text">Price</div>
+                        <div class="price" id="price">{{item.instrument.price}}</div>
+                    </div>
+                    <div class="remove" id="remove-cart">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
             {{/each}}
-            <!-- end of each {{ /#each }} -->
 
             <!-- Summary of Cart -->       
             <div class="summary">
@@ -17,7 +36,7 @@
                 <div class="summary-wrapper">
                     <div class="summary-contents">
                         <p>Total</p>
-                        <div class="summary-total">$250.00</div>
+                        <div class="summary-total"></div>
                     </div>
                     <div class="sales-tax summary-contents">
                         <p>Sales Tax</p>
@@ -25,7 +44,7 @@
                     </div>
                     <div class="subtotal summary-contents">
                         <p>Subtotal</p>
-                        <div class="summary-subtotal">$277.00</div>
+                        <div class="summary-subtotal"></div>
                     </div>
                 </div>
                 <div class="checkout">
@@ -38,3 +57,5 @@
         </div>
     </div>
 </section>
+
+<script src="/javascript/cart.js"></script>
