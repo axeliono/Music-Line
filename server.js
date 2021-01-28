@@ -31,6 +31,9 @@ app.set("view engine", "handlebars");
 
 app.use(require("./controllers/"));
 
+// trying : Joshua
+app.use(express.static('./public/images')); 
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });

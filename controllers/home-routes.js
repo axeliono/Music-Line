@@ -168,4 +168,10 @@ router.get("/contact", (req, res) => {
 
 // render shopping cart page when icon is clicked in header
 
+
+// render checkout page when 'proceed to checkout' button is clicked in shopping cart page
+router.get("/checkout", (req, res) => {
+  res.render("checkout");
+});
+
 module.exports = router;
