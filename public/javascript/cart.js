@@ -24,7 +24,8 @@ window.addEventListener('load', (event) => {
        for(i=0; i<prices.length; i++) {
        sum += (parseInt(prices[i].innerText));
        }
-    subtotal = ((sum * 1.0825))/100 + sum;
+    
+    subtotal = (sum * 1.0825);
     let subDollar = subtotal.toFixed(2);
     let total = document.querySelector('.summary-total');
     let subt = document.querySelector('.summary-subtotal');
