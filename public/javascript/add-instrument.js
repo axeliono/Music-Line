@@ -1,26 +1,34 @@
 async function newInstrumentSale(event) {
   event.preventDefault();
 
-  const instrument_id;
-  //pull sale id from session
-  const sale_id = req.session.sale_id;
-  const response = await fetch("/api/shopping/", {
+  const instrument_id = document
+    .querySelector(".add-to-cart-btn")
+    .getAttribute("instrument");
+  console.log(instrument_id);
+
+  const saleInfo = await (await fetch("/api/session")).json();
+  console.log(saleInfo);
+  const sale_id = saleInfo.sale;
+  console.log(sale_id);
+  const response = await fetch("/api/shopping", {
     method: "post",
     body: JSON.stringify({
-      instrument_id,
       sale_id,
+      instrument_id,
     }),
     headers: {
       "Content-Type": "application/json",
     },
   });
-
   if (response.ok) {
+    alert("successfully added to cart");
     //create alert if they want to continue shopping or move to checkout
-    document.location.replace("/shopping");
   } else {
     alert(response.statusText);
   }
 }
 
+document
+  .querySelector(".add-to-cart-btn")
+  .addEventListener("click", newInstrumentSale);
 //add event listener here;
