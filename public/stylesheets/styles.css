@@ -204,19 +204,7 @@ section {
     margin-right: 0.5rem;
 }
 
-@media screen and (min-width: 900px) {
-    .grid-wrapper {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-    }
-}
 
-@media screen and (min-width: 1120px) {
-    .grid-wrapper {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1.2rem;
-    }
-}
 
 .classification-name {
     font-style: italic;
@@ -298,24 +286,6 @@ section {
     margin-right: 8px;
 }
 
-@media screen and (min-width: 1020px) {
-    .content-wrapper {
-        height: 550px;
-        padding: 1rem 1rem 1rem 4.5rem;
-    }
-    .single-name {
-        font-size: 3.3rem;
-    }
-    .single-price {
-        font-size: 2.3rem;
-    }
-    .single-text p span{
-        font-size: 1.4rem;
-    }
-    .add-to-cart-btn {
-        margin-top: 1.3rem;
-    }
-}
 
 /* Login/Signup page */
 .forms-wrapper {
@@ -387,34 +357,6 @@ section {
     font-weight: 600;
 }
 
-@media screen and (min-width: 1020px) {
-    .login-text,
-    .signup-text {
-        font-size: 3rem;
-    }
-    .login-text span,
-    .signup-text span {
-        font-size: 1.4rem;
-    }
-    .login-form,
-    .signup-form {
-        margin-top: 2.5rem;
-    }
-    .signup-form {
-        margin-top: 2.5rem;
-    }
-    .input-group label {
-        font-size: 0.85rem;
-    }
-    .input-group input {
-        width: 18rem;
-        height: 2.1rem;
-        margin-bottom: 2rem;
-    }
-    .login-btn {
-    font-size: 0.85rem;
-    }
-}
 
 /* Footer styles */
 .main-footer {
@@ -673,7 +615,7 @@ section {
 }
 
 
-/* YUNI HERO STYLES */
+/* YUNIK HERO STYLES */
 .hero {
     margin-top: 5rem;
 }
@@ -872,5 +814,68 @@ section {
     color: orange;
 }
 
-/* checkout page styles */
 
+/* Responsiveness */
+
+@media screen and (min-width: 1120px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 1020px) {
+    .login-text,
+    .signup-text {
+        font-size: 3rem;
+    }
+    .login-text span,
+    .signup-text span {
+        font-size: 1.4rem;
+    }
+    .login-form,
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .input-group label {
+        font-size: 0.85rem;
+    }
+    .input-group input {
+        width: 18rem;
+        height: 2.1rem;
+        margin-bottom: 2rem;
+    }
+    .login-btn {
+    font-size: 0.85rem;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .content-wrapper {
+        height: 550px;
+        padding: 1rem 1rem 1rem 4.5rem;
+    }
+    .single-name {
+        font-size: 3.3rem;
+    }
+    .single-price {
+        font-size: 2.3rem;
+    }
+    .single-text p span{
+        font-size: 1.4rem;
+    }
+    .add-to-cart-btn {
+        margin-top: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+}
