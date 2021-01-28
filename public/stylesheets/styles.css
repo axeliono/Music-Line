@@ -250,6 +250,10 @@ section {
     font-size: 2rem;
 }
 
+.single-text{
+    font-size: 2.2rem
+}
+
 .single-text p {
     font-size: 1.1rem;
     text-transform: capitalize;
@@ -476,11 +480,11 @@ section {
     display: flex;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out;
 }
 
 .cart-list:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .item-list{
@@ -536,7 +540,7 @@ section {
     margin: 50px auto 0 auto;
     padding: 20px 30px;
     background-color: #ccc;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
 }
 
 .sum-header{
