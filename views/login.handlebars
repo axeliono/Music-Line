@@ -28,6 +28,12 @@
                         <input type="password" name="login-password" id="login-password">
                     </div>
                     <button class="btn login-btn" id="login-btn">Log In</button>
+                                    {{#if loggedIn}}
+                    <button class="btn toLogout">
+                        {{!-- <i class="fas fa-user"></i> --}}
+                        Log out
+                    </button>
+                    {{/if}}
                 </form>
             </div>
             <div class="line"></div>
