@@ -34,9 +34,9 @@ app.use(require("./controllers/"));
 
 
 // search-engine
-const searchEngine = require('search-engine');
+// const searchEngine = require('search-engine');
 
-searchEngine(JSON.Object, field_to_search);
+// searchEngine(JSON.Object, field_to_search);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
