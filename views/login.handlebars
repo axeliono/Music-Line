@@ -14,16 +14,17 @@
                     </div>
                     <div class="input-group">
                         <label for="login-password">Password:</label>
-                        <input type="text" name="login-password" id="login-password">
+                        <input type="password" name="login-password" id="login-password">
                     </div>
                     <button class="btn login-btn" id="login-btn">Log In</button>
+                                    {{#if loggedIn}}
+                    <button class="btn toLogout">
+                        {{!-- <i class="fas fa-user"></i> --}}
+                        Log out
+                    </button>
+                    {{/if}}
                 </form>
-                {{#if loggedIn}}
-                <button class="nav-icon toLogout">
-                    <i class="fas fa-user"></i>
-                    Logout
-                </button>
-                {{/if}}
+
             </div>
             <div class="line"></div>
             <div class="signup-side">
