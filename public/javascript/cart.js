@@ -1,4 +1,5 @@
 // function to delete item from cart
+
 async function deleteItemHandler (event) {
     event.preventDefault();
 

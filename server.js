@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
@@ -31,8 +32,11 @@ app.set("view engine", "handlebars");
 
 app.use(require("./controllers/"));
 
-// trying : Joshua
-app.use(express.static('./public/images')); 
+
+// search-engine
+const searchEngine = require('search-engine');
+
+searchEngine(JSON.Object, field_to_search);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
