@@ -19,7 +19,7 @@ const sess = {
   }),
 };
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(session(sess));
 
@@ -34,9 +34,9 @@ app.use(require("./controllers/"));
 
 
 // search-engine
-const searchEngine = require('search-engine');
+//const searchEngine = require('search-engine');
 
-searchEngine(JSON.Object, field_to_search);
+//searchEngine(JSON.Object, field_to_search);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
