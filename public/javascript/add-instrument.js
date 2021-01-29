@@ -21,7 +21,8 @@ async function newInstrumentSale(event) {
     },
   });
   if (response.ok) {
-    alert("successfully added to cart");
+    alert("Successfully added to cart!");
+    document.location.replace('/shop');
     //create alert if they want to continue shopping or move to checkout
   } else {
     alert(response.statusText);

@@ -42,7 +42,7 @@ router.get("/shopping-cart", withAuth, (req, res) => {
     include: [
       {
         model: Instrument,
-        attributes: ["name", "origin", "manufacturer", "price"],
+        attributes: ["id", "name", "origin", "manufacturer", "price", "image_path"],
         include: {
           model: Classification,
           attributes: ["name"],
@@ -52,6 +52,7 @@ router.get("/shopping-cart", withAuth, (req, res) => {
   })
     .then((dbShopData) => {
       const items = dbShopData.map((item) => item.get({ plain: true }));
+      console.log(items);
       res.render("shopping-cart", { items });
     })
     .catch((err) => {
