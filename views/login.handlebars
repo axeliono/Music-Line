@@ -27,13 +27,18 @@
                         <label for="login-password">Password:</label>
                         <input type="password" name="login-password" id="login-password">
                     </div>
+<<<<<<< HEAD
                     <button type="submit" class="btn login-btn" id="login-btn">Log In</button>
                                     {{#if loggedIn}}
+=======
+                    <button class="btn login-btn" id="login-btn" type="submit">Log In</button>
+                {{#if loggedIn}}
+>>>>>>> db1f24f2ad50951481629f6d2f140d4aa840408f
                     <button class="btn toLogout">
                         {{!-- <i class="fas fa-user"></i> --}}
                         Log out
                     </button>
-                    {{/if}}
+                {{/if}}
                 </form>
             </div>
             <div class="line"></div>
@@ -55,7 +60,7 @@
                         <label for="signup-password">Password:</label>
                         <input type="password" name="signup-password" id="signup-password">
                     </div>
-                    <button class="btn login-btn" id="signup-btn">Sign Up</button>
+                    <button class="btn login-btn" id="signup-btn" type="submit">Sign Up</button>
                 </form>
             </div>
             {{/if}}
