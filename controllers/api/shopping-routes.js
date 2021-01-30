@@ -14,11 +14,11 @@ router.get("/", (req, res) => {
     include: {
       model: Instrument,
       attributes: ["id", "name", "origin", "manufacturer", "price"],
-        include: {
-          model: Classification,
-          attributes: ["name"],
-        },
-    }
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    },
   })
     .then((dbSaleData) => {
       res.json(dbSaleData);
@@ -36,18 +36,16 @@ router.get("/myCart", (req, res) => {
     },
     attributes: ["id"],
     include: {
-        model: Instrument,
-        attributes: ["id", "name", "origin", "manufacturer", "price"],
-          include: {
-            model: Classification,
-            attributes: ["name"],
-          },
-      }
-    })
+      model: Instrument,
+      attributes: ["id", "name", "origin", "manufacturer", "price"],
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    },
+  })
     .then((dbSaleData) => {
-      const items = dbSaleData.map((items) =>
-        items.get({ plain: true })
-      );
+      const items = dbSaleData.map((items) => items.get({ plain: true }));
       res.render("shopping-cart", { items });
     })
     .catch((err) => {
@@ -58,18 +56,17 @@ router.get("/myCart", (req, res) => {
 
 router.get("/", withAuth, (req, res) => {
   Shopping_Cart_Selection.findAll({
-      model: Shopping_Cart_Selection,
-      attributes: ["id"],
-      include:
-        {
-          model: Instrument,
-          attributes: ["name", "origin", "manufacturer", "price"],
-          include: {
-            model: Classification,
-            attributes: ["name"],
-          },
-        },
-    })
+    model: Shopping_Cart_Selection,
+    attributes: ["id"],
+    include: {
+      model: Instrument,
+      attributes: ["name", "origin", "manufacturer", "price"],
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    },
+  })
     .then((dbShopData) => {
       if (!dbShopData) {
         res
@@ -87,20 +84,19 @@ router.get("/", withAuth, (req, res) => {
 
 router.get("/:id", (req, res) => {
   Shopping_Cart_Selection.findAll({
-    where:{
-      sale_id: req.params.id
+    where: {
+      sale_id: req.params.id,
     },
-      attributes: ["id"],
-      include:
-        {
-          model: Instrument,
-          attributes: ["name", "origin", "manufacturer", "price"],
-          include: {
-            model: Classification,
-            attributes: ["name"],
-          },
-        },
-    })
+    attributes: ["id"],
+    include: {
+      model: Instrument,
+      attributes: ["name", "origin", "manufacturer", "price"],
+      include: {
+        model: Classification,
+        attributes: ["name"],
+      },
+    },
+  })
     .then((dbShopData) => {
       if (!dbShopData) {
         res
@@ -120,7 +116,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Shopping_Cart_Selection.create({
     sale_id: req.body.sale_id,
-    instrument_id: req.body.instrument_id
+    instrument_id: req.body.instrument_id,
   })
     .then((dbShopData) => {
       res.json(dbShopData);

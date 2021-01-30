@@ -59,29 +59,22 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbUserData) => {
-      state.userData = dbUserData;
-      Sale.create({
-        sum_price: 0,
-        user_id: state.userData.id,
-      })
-        .then((dbSaleData) => {
-          state.saleData = dbSaleData;
-          req.session.save(() => {
-            req.session.user_id = state.userData.id;
-            req.session.username = state.userData.username;
-            req.session.sale = state.saleData.id;
-            req.session.loggedIn = true;
-            console.log(req.session);
-            console.log(state);
-            res.json({ user: dbUserData, message: "You are now logged in!" });
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(400).json(err);
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.email = dbUserData.email;
+        req.session.loggedIn = true;
+        req.session.sale = null;
+
+        res.json(dbUserData);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
-});
+
 //uses checkpassword function in user model to verify user login request and create a session
 router.post("/login", (req, res) => {
   User.findOne({
@@ -95,13 +88,14 @@ router.post("/login", (req, res) => {
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-    
+
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
     state.userData = dbUserData;
     Sale.create({
+      sum_price: 0,
       user_id: state.userData.id,
     })
       .then((dbSaleData) => {
@@ -112,7 +106,7 @@ router.post("/login", (req, res) => {
           req.session.sale = state.saleData.id;
           req.session.loggedIn = true;
           console.log(req.session);
-          console.log(state);
+          console.log();
           res.json({ user: dbUserData, message: "You are now logged in!" });
         });
       })
