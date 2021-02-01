@@ -4,33 +4,31 @@
         <div class="adding-cart">
     
             <!-- First item -->
-             {{#each}} item in their cart 
+             {{#each items as |item|}}
             <div class="cart-list">
                 <div class="item-list">
                     <div class="item-img" id="item-img">
-                        <img src="images2/accordian.jpg" alt="">
+                        <img src={{item.instrument.image_path}} alt="">
                     </div>
                     <div class="item-name" id="item-name">
-                        Accordian
+                        {{item.instrument.name}}
                     </div>
                     <div class="item-group">
                         <div class="item-text">Qty</div>
-                        <div class="quantity" id="quantity">2</div>
+                        <div class="quantity" id="quantity">1</div>
                     </div>
                     <div class="item-group">
                         <div class="item-text">Price</div>
-                        <div class="price" id="price">$100.00</div>
+                        <div class="price" id="price">
+                            $ <span class="enter-price">{{item.instrument.price}}</span>
+                        </div>
                     </div>
-                    <div class="item-group">
-                        <div class="item-text">Total</div>
-                        <div class="total" id="total">$200.00</div>
-                    </div>
-                    <div class="remove" id="remove-cart">
+                    <div class="remove" item="{{item.id}}">
                         <i class="fas fa-trash-alt"></i>
                     </div>
                 </div>
             </div>
-            <!-- end of each {{ /#each }} -->
+            {{/each}}
 
             <!-- Summary of Cart -->       
             <div class="summary">
@@ -40,7 +38,7 @@
                 <div class="summary-wrapper">
                     <div class="summary-contents">
                         <p>Total</p>
-                        <div class="summary-total">$250.00</div>
+                        <div class="summary-total"></div>
                     </div>
                     <div class="sales-tax summary-contents">
                         <p>Sales Tax</p>
@@ -48,16 +46,18 @@
                     </div>
                     <div class="subtotal summary-contents">
                         <p>Subtotal</p>
-                        <div class="summary-subtotal">$277.00</div>
+                        <div class="summary-subtotal"></div>
                     </div>
                 </div>
                 <div class="checkout">
-                    <button type="submit" id="checkout-btn">
+                    <a href="/checkout" id="checkout-btn">
                         Checkout
                         <i class="fas fa-arrow-circle-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script src="/javascript/cart.js"></script>

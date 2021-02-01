@@ -2,7 +2,7 @@ const seedClassifications = require('./classification-seeds');
 const seedInstruments = require('./instrument-seeds');
 const seedSales = require('./sale-seeds');
 const seedShoppingCart = require('./shopping-cart-seeds');
-const userSeeds = require('./user-seeds.js')
+const userSeeds = require('./user-seeds.js');
 
 const sequelize = require('../config/connection');
 

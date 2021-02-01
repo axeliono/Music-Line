@@ -172,6 +172,7 @@ section {
 .card img {
     width: 100%;
     height: 60%;
+    object-fit: contain;
 }
 
 .card-details {
@@ -183,7 +184,7 @@ section {
 }
 
 .instrument-name {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -203,19 +204,7 @@ section {
     margin-right: 0.5rem;
 }
 
-@media screen and (min-width: 900px) {
-    .grid-wrapper {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.2rem;
-    }
-}
 
-@media screen and (min-width: 1120px) {
-    .grid-wrapper {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1.2rem;
-    }
-}
 
 .classification-name {
     font-style: italic;
@@ -225,16 +214,20 @@ section {
 /* Single Instrument view */
 .single-instrument {
     display: flex;
+    justify-content: space-around;
+    height: 100%;
     color: #000;
 }
 
 .image-wrapper {
-    width: 50%;
-    height: 450px;
+    width: 40%;
+    max-height: 500px;
 }
 
 .image-wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .content-wrapper {
@@ -257,6 +250,10 @@ section {
     font-size: 2rem;
 }
 
+.single-text{
+    font-size: 2.2rem
+}
+
 .single-text p {
     font-size: 1.1rem;
     text-transform: capitalize;
@@ -265,11 +262,13 @@ section {
 }
 
 .single-text span {
+    font-size: 1.1rem;
     color: #bdbdbd;
     font-weight: 600;
 }
 
 .btn {
+    cursor: pointer;
     outline: none;
     border: none;
     padding: 0.7rem 1rem;
@@ -279,30 +278,18 @@ section {
 .add-to-cart-btn {
     font-size: 1rem;
     text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-to-cart-btn:hover {
+    background-color: orange;
+    color: #fff;
 }
 
 .add-to-cart-btn i {
     margin-right: 8px;
 }
 
-@media screen and (min-width: 1020px) {
-    .content-wrapper {
-        height: 550px;
-        padding: 1rem 1rem 1rem 4.5rem;
-    }
-    .single-name {
-        font-size: 3.3rem;
-    }
-    .single-price {
-        font-size: 2.3rem;
-    }
-    .single-text p {
-        font-size: 1.4rem;
-    }
-    .add-to-cart-btn {
-        margin-top: 1.3rem;
-    }
-}
 
 /* Login/Signup page */
 .forms-wrapper {
@@ -372,35 +359,16 @@ section {
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 600;
+    width: 100px;
 }
 
-@media screen and (min-width: 1020px) {
-    .login-text,
-    .signup-text {
-        font-size: 3rem;
-    }
-    .login-text span,
-    .signup-text span {
-        font-size: 1.4rem;
-    }
-    .login-form,
-    .signup-form {
-        margin-top: 2.5rem;
-    }
-    .signup-form {
-        margin-top: 2.5rem;
-    }
-    .input-group label {
-        font-size: 0.85rem;
-    }
-    .input-group input {
-        width: 18rem;
-        height: 2.1rem;
-        margin-bottom: 2rem;
-    }
-    .login-btn {
-    font-size: 0.85rem;
-    }
+
+.toLogout{
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;  
+    width: 100px;
+    margin-top: 20px;
 }
 
 /* Footer styles */
@@ -521,11 +489,11 @@ section {
     display: flex;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out;
 }
 
 .cart-list:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .item-list{
@@ -562,7 +530,8 @@ section {
 
 .quantity,
 .price,
-.total {
+.total,
+.enter-price {
     font-size: 0.85rem;
 }
 
@@ -577,11 +546,10 @@ section {
 
 .summary{
     width: 65%;
-    height: 40vh;
     margin: 50px auto 0 auto;
     padding: 20px 30px;
     background-color: #ccc;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
 }
 
 .sum-header{
@@ -660,7 +628,7 @@ section {
 }
 
 
-/* YUNI HERO STYLES */
+/* YUNIK HERO STYLES */
 .hero {
     margin-top: 5rem;
 }
@@ -681,7 +649,6 @@ section {
     width: 20%;
     float: left;
     height: 50vh;
-    object-fit: cover;
 }
 
 @keyframes slider {
@@ -730,145 +697,301 @@ section {
 
 .hero-content {
     height: 100%;
+    width: 50%;
     margin-top: 3.5rem;
     margin-bottom: 5rem;
     font-size: 1.4rem;
     text-align: center;
 }
 
-/* About & Contact page- About section*/
+.about-us-section {
+    margin: 4rem auto 2rem auto;
+}
 
-.contact-about{
-    width: 80%; 
-    height: 80vh;
-    margin: 0 auto;
+.about-us-content {
+    margin-top: 3rem;
     display: flex;
     align-items: center;
-
+    justify-content: space-around;
 }
 
-.about{
-    width: 50%;
-    margin: 0 auto;
-    padding-bottom: 200px;
+.hero-content-img {
+    width: 40%;
+    height: 400px;
 }
 
-.about h1{
-    font-size: 3rem;
-}
-
-.about p{
-    font-size: 1rem;
-}
-
-.contact-container {
-    max-width: 400px;
+.hero-content-img img {
     width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  #contact input[type="text"],
-  #contact input[type="email"],
-  #contact input[type="username"],
-  #contact input[type="url"],
-  #contact textarea,
-  #contact button[type="submit"] {
-    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
-  }
-  
-  #contact {
-    background: #F9F9F9;
-    padding: 25px;
-    margin: 150px 0;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
+    height: 100%;
+    object-fit: cover;
+}
 
-  #contact h3 {
+.testimonial-section {
+    margin-bottom: 2rem;
+}
+
+.testimonial-description {
+    font-size: 2.3rem;
+    margin: 2rem auto 4rem auto;
+    font-style: italic;
+    color: #bdbdbd;
+}
+
+.testimonials {
+    margin: 2rem auto 0 auto;
+    width: 90%;
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial-card {
+    width: 300px;
+    height: 300px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.2);
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-icon {
+    margin-bottom: 1rem;
+}
+
+.user-icon i {
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    color: orange;
+    border: 1px solid orange;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 1.3rem;
+    color: orange;
+}
+
+.user-quote {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    text-align: center;
+    font-style: italic;
+}
+
+@media screen and (max-width: 900px) {
+    .user-quote {
+        font-size: 0.9rem;
+    }
+    .testimonials {
+        height: 750px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .testimonial-card {
+        height: 230px;
+    }
+}
+
+/* Contact Section styles */
+.contact-section {
+    padding-top: 6.5rem;
+}
+
+.contact-section .forms-wrapper {
+    margin-top: 4rem;
+    height: 400px;
+}
+
+.contact-form-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-text {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.contact-form {
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-group label,
+.email-content label,
+.name-group label {
     display: block;
-    font-size: 30px;
-    font-weight: 300;
-    /* text-align: center;
-    padding-top: -10px; */
-  }
-  
-  #contact h4 {
-    margin: 5px 0 15px;
-    display: block;
-    font-size: 13px;
-    font-weight: 400;
-  }
-  
-  fieldset {
-    border: medium none !important;
-    margin: 0 0 10px;
-    min-width: 100%;
-    padding: 0;
-    width: 100%;
-  }
-  
-  #contact input[type="text"],
-  #contact input[type="email"],
-  #contact input[type="username"],
-  #contact input[type="url"],
-  #contact textarea {
-    width: 100%;
-    border: 1px solid #ccc;
-    background: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-  }
-  
-  #contact input[type="text"]:hover,
-  #contact input[type="email"]:hover,
-  #contact input[type="username"]:hover,
-  #contact input[type="url"]:hover,
-  #contact textarea:hover {
-    -webkit-transition: border-color 0.3s ease-in-out;
-    -moz-transition: border-color 0.3s ease-in-out;
-    transition: border-color 0.3s ease-in-out;
-    border: 1px solid #aaa;
-  }
-  
-  #contact textarea {
-    height: 100px;
-    max-width: 100%;
-    resize: none;
-  }
-  
-  #contact button[type="submit"] {
-    cursor: pointer;
-    width: 100%;
-    border: none;
-    background: #FFA500;
-    color: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-    font-size: 15px;
-  }
-  
-  #contact button[type="submit"]:active {
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-  }
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
 
-  #contact input:focus,
-  #contact textarea:focus {
-    outline: 0;
-    border: 1px solid #aaa;
-  }
-  
-  ::-webkit-input-placeholder {
-    color: #888;
-  }
-  
-  :-moz-placeholder {
-    color: #888;
-  }
-  
-  ::-moz-placeholder {
-    color: #888;
-  }
-  
-  :-ms-input-placeholder {
-    color: #888;
-  }
+.select-group {
+    margin-bottom: 1rem;
+}
+
+.select-group select,
+.name-group input {
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+    outline: none;
+    border: 1px solid #bdbdbd;
+}
+
+.email-content {
+    width: 100%;
+}
+
+.email-content textarea {
+    width: 100%;
+    height: 200px;
+    outline: none;
+    border: 1px solid #bdbdbd;
+    font-size: 0.75rem;
+}
+
+.email-btn {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.email-btn:hover {
+    background-color: orange;
+    color: #fff;
+}
+
+.other-contact-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.other-contact-wrapper .contact-text {
+    margin-top: 0.6rem;
+}
+
+.contact-list {
+    height: 90%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.contact-item i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0.5rem auto;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-item i:hover {
+    color: orange;
+}
+
+
+/* Responsiveness */
+
+@media screen and (min-width: 1120px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 1020px) {
+    .login-text,
+    .signup-text {
+        font-size: 3rem;
+    }
+    .login-text span,
+    .signup-text span {
+        font-size: 1.4rem;
+    }
+    .login-form,
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .signup-form {
+        margin-top: 2.5rem;
+    }
+    .input-group label {
+        font-size: 0.85rem;
+    }
+    .input-group input {
+        width: 18rem;
+        height: 2.1rem;
+        margin-bottom: 2rem;
+    }
+    .login-btn {
+    font-size: 0.85rem;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .content-wrapper {
+        height: 550px;
+        padding: 1rem 1rem 1rem 4.5rem;
+    }
+    .single-name {
+        font-size: 3.3rem;
+    }
+    .single-price {
+        font-size: 2.3rem;
+    }
+    .single-text p span{
+        font-size: 1.4rem;
+    }
+    .add-to-cart-btn {
+        margin-top: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .grid-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+}

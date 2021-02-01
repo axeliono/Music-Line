@@ -2,6 +2,17 @@
 <section class="login-signup">
     <div class="container">
         <div class="forms-wrapper">
+            {{#if loggedIn}}
+            <div class="login-side">
+                <div class="login-text">
+                    You are logged in
+                </div>
+                <button class="btn nav-icon toLogout">
+                    <i class="fas fa-user"></i>
+                    Logout
+                </button>
+            </div>
+            {{else}}
             <div class="login-side">
                 <div class="login-text">
                     <span>Existing users...</span>
@@ -16,7 +27,13 @@
                         <label for="login-password">Password:</label>
                         <input type="password" name="login-password" id="login-password">
                     </div>
-                    <button class="btn login-btn" id="login-btn">Log In</button>
+                    <button class="btn login-btn" id="login-btn" type="submit">Log In</button>
+                {{#if loggedIn}}
+                    <button class="btn toLogout">
+                        {{!-- <i class="fas fa-user"></i> --}}
+                        Log out
+                    </button>
+                {{/if}}
                 </form>
             </div>
             <div class="line"></div>
@@ -36,12 +53,16 @@
                     </div>
                     <div class="input-group">
                         <label for="signup-password">Password:</label>
-                        <input type="text" name="signup-password" id="signup-password">
+                        <input type="password" name="signup-password" id="signup-password">
                     </div>
-                    <button class="btn login-btn" id="signup-btn">Sign Up</button>
+                    <button class="btn login-btn" id="signup-btn" type="submit">Sign Up</button>
                 </form>
             </div>
+            {{/if}}
         </div>
     </div>
 </section>
 <script src="/javascript/account.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
