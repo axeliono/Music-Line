@@ -31,7 +31,7 @@ Lewis Cuthbert
 Chandler Green
 
 ## Application
-https://guarded-dawn-15470.herokuapp.com/
+http://guarded-dawn-15470.herokuapp.com
 
 ## Github-Repo
 https://github.com/axeliono/Music-Line/
