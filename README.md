@@ -21,14 +21,14 @@ E-Commerce site allowing for purchase and rental of music products
 
 ## Contributing
 ### Model
-Mike Lewis
-Daniela Acuna
+* Mike Lewis
+* Daniela Acuna
 ### View
-Tatum Stratford
-Yunik Sung
+* Tatum Stratford
+* Yunik Sung
 ### Controller
-Lewis Cuthbert
-Chandler Green
+* Lewis Cuthbert
+* Chandler Green
 
 ## Application
 https://guarded-dawn-15470.herokuapp.com/
