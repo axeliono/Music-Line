@@ -12,14 +12,22 @@ E-Commerce site allowing for purchase and rental of music products
 ## Table of Contents
 
 1. [Features](#features)
-2. [Contributing](#contributing)
-3. [Application link](#application)
-4. [Github Repo](#github-repo)
-5. [License](#license)
+2. [Technologies](#technologies)
+3. [Contributing](#contributing)
+4. [Application link](#application)
+5. [Github Repo](#github-repo)
+6. [License](#license)
 
 ## Features
 1. Has all the instruments
 3. Password protected shopping
+
+## Technologies
+* Javascript
+* Express.js
+* MySQL
+* Handlebars.js
+* HTML/CSS
 
 ## Contributing
 ### Model (Back End Developer)
